@@ -1,0 +1,23 @@
+/* Navbar CSS */
+
+.nav {
+  display: inline-block;
+  height: 150px;
+  width: 100%;
+  background-color: #8ac6d0;
+  overflow: hidden;
+}
+
+.navLogo {
+  height: 125px;
+  margin: 20px 0 0 20px;
+}
+
+.navLink {
+  float: right;
+  width: 150px;
+  text-align: center;
+  font-size: 30px;
+  color: #554971;
+  padding-top: 110px;
+}
