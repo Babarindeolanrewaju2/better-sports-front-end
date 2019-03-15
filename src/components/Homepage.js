@@ -9,7 +9,7 @@ const Homepage = () => {
         <img
           className="homeBackground"
           src="http://localhost:3000/images/homepage_stadium.jpg"
-          alt="Soccer Stadium Photographer: Tom Grimbert, photo care of Unsplash"
+          alt="Soccer Stadium Photographer: Tom Grimbert, opensource copyright - care of Unsplash"
         />
       </div>
       <p className="homeText">
