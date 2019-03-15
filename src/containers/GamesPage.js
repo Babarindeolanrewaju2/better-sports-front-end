@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
 import Navbar from "../components/Navbar";
-import Games from "../components/Games";
+import Games from "../components/Games/Games";
 
 const GamesPage = props => {
   return (
     <Fragment>
       <Navbar />
-      <Games games={props.games} teams={props.teams} />
+      <Games games={props.games} />
     </Fragment>
   );
 };

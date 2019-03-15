@@ -1,0 +1,37 @@
+/* Available Games to bet on CSS */
+
+table {
+  width: 100%;
+  text-align: center;
+  border: 2px black solid;
+}
+
+th {
+  height: 50px;
+  background-color: #8ac6d0;
+  font-size: 25px;
+}
+
+tr {
+  height: 50px;
+  border: 2px black solid;
+  font-size: 25px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #e495e4;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #8ac6d0;
+}
+
+table {
+  background-color: #ff33cc;
+}
+
+button {
+  border-radius: 15px;
+  padding: 10px;
+  font-weight: bold;
+}

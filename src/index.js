@@ -10,8 +10,6 @@ import reducer from "./reducer/rootReducer";
 
 const store = createStore(reducer);
 
-console.log(store, store.getState());
-
 ReactDOM.render(
   <Router>
     <Provider store={store}>
