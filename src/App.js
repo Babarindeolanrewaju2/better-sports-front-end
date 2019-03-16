@@ -6,6 +6,7 @@ import Home from "./containers/Home";
 import GamesPage from "./containers/GamesPage";
 import Dashboard from "./containers/Dashboard";
 import SignupPage from "./containers/SignupPage";
+import LoginPage from "./containers/LoginPage";
 
 class App extends Component {
   render() {
@@ -34,6 +35,11 @@ class App extends Component {
           exact
           path="/signup"
           render={routerProps => <SignupPage {...routerProps} />}
+        />
+        <Route
+          exact
+          path="/login"
+          render={routerProps => <LoginPage {...routerProps} />}
         />
       </Fragment>
     );

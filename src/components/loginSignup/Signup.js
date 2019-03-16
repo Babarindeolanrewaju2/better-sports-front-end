@@ -42,10 +42,10 @@ const Signup = () => {
           </p>
 
           <div class="clearfix">
-            <button type="button" class="cancelbtn">
+            <button type="button" className="cancelbtn">
               Cancel
             </button>
-            <button type="submit" class="signupbtn">
+            <button type="submit" className="signupbtn">
               Sign Up
             </button>
           </div>
