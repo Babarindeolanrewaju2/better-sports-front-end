@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 
 import Home from "./containers/Home";
 import GamesPage from "./containers/GamesPage";
+import Dashboard from "./containers/Dashboard";
 
 class App extends Component {
   render() {
@@ -19,6 +20,13 @@ class App extends Component {
           path="/games"
           render={routerProps => (
             <GamesPage {...routerProps} games={this.props.games} />
+          )}
+        />
+        <Route
+          exact
+          path="/dashboard"
+          render={routerProps => (
+            <Dashboard {...routerProps} games={this.props.games} />
           )}
         />
       </Fragment>
