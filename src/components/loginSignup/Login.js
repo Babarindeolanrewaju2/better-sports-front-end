@@ -1,18 +1,30 @@
 import React from "react";
 
+import { connect } from "react-redux";
+import { login } from "../../actions/fetchActions";
+
 import "../../styles/Login.css";
 
-const Login = () => {
+const Login = props => {
+  // on submition of login form...
   function handleSubmit(event) {
+    // prevent default form action
     event.preventDefault();
-    console.log("email", event.target.email.value);
-    console.log("pwd", event.target.password.value);
+    // grab necessary form data
+    let email = event.target.email.value;
+    let pwd = event.target.password.value;
+
+    // used login method to verify user in DB and return token or error
+    props.login(email, pwd);
+    // clear form of current data
+    document.getElementById("login").reset();
   }
 
+  // display form HTML
   return (
     <div className="loginContainer">
       <div className="loginForm">
-        <form onSubmit={handleSubmit}>
+        <form id="login" onSubmit={handleSubmit}>
           <h1>Login</h1>
           <p>Please fill in this form to login.</p>
           <hr />
@@ -44,4 +56,14 @@ const Login = () => {
   );
 };
 
-export default Login;
+// add login method as prop - this does a POST to /login of API and verifies user
+function mapDispatchToProps(dispatch) {
+  return {
+    login: (email, pwd) => login(dispatch, email, pwd)
+  };
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(Login);

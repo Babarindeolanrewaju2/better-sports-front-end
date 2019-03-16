@@ -6,14 +6,20 @@ import { signup } from "../../actions/fetchActions";
 import "../../styles/Signup.css";
 
 const Signup = props => {
+  // event to hand submition of signup form
   function handleSubmit(event) {
+    // prevent default form action
     event.preventDefault();
+    // grab all form field data
     let firstname = event.target.firstname.value;
     let lastname = event.target.lastname.value;
     let email = event.target.email.value;
     let pwd = event.target.password.value;
     let pwdConfirm = event.target.passwordConfirmation.value;
 
+    // if password and password confirmation match send data to API /signup
+    // form fields are all required, and assure data will be present
+    // database requires a unique email
     if (pwd === pwdConfirm) {
       props.signup(firstname, lastname, email, pwd);
     } else
@@ -22,6 +28,7 @@ const Signup = props => {
       );
   }
 
+  // return signup form HTML
   return (
     <div className="signupContainer">
       <div className="signupForm">

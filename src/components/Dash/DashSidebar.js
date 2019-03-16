@@ -1,6 +1,7 @@
 import React from "react";
 
 const DashSidebar = props => {
+  //return curent user info for the sidebar of the dashboard
   return (
     <div className="dashSidebar">
       <div className="userName">

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+
 import { connect } from "react-redux";
 import { fetchGames } from "../../actions/fetchActions";
 
@@ -8,9 +9,11 @@ import "../../styles/Games.css";
 
 class Games extends Component {
   componentDidMount() {
+    // get all games from API
     this.props.getGames();
   }
 
+  // create all match rows for the table to be displayed
   mapGameInfoToMatchCard = () => {
     return this.props.games.map(game => {
       return <Match key={game.id} game={game} />;
@@ -50,6 +53,7 @@ class Games extends Component {
   }
 }
 
+// allow method to be set as a prop
 function mapDispatchToProps(dispatch) {
   return {
     getGames: () => fetchGames(dispatch)
