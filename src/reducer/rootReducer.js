@@ -13,6 +13,8 @@ function reducer(state = initialState, action) {
       return { ...state, games: action.payload };
     case "UPDATE_TEAMS":
       return { ...state, teams: action.payload };
+    case "CURRENT_USER":
+      return { ...state, currentUser: action.payload };
     default:
       return state;
   }

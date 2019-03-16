@@ -1,4 +1,5 @@
 const GAMES_API = "http://localhost:8000/api/v1/games";
+const CREATE_ACCT = "http://localhost:8000/api/v1/signup";
 //const TEAMS_API = "http://localhost:8000/api/v1/teams";
 
 export function fetchGames(dispatch) {
@@ -6,6 +7,27 @@ export function fetchGames(dispatch) {
     .then(res => res.json())
     .then(games => {
       return dispatch({ type: "UPDATE_GAMES", payload: games["data"] });
+    });
+}
+
+export function signup(dispatch, firstname, lastname, email, pwd) {
+  return fetch(CREATE_ACCT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({
+      firstname: firstname,
+      lastname: lastname,
+      email: email,
+      pwd: pwd
+    })
+  })
+    .then(res => res.json())
+    .then(newUser => {
+      return dispatch({ type: "CURRENT_USER", payload: newUser["data"] });
+      // TODO:  PUSH TO Dashboard here
     });
 }
 

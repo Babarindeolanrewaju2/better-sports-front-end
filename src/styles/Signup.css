@@ -12,9 +12,9 @@ body {
 .signupForm {
   background-color: white;
   width: 40vw;
-  height: 50vh;
+  height: 65vh;
   padding: 1vh 1vw;
-  margin-top: 19vh;
+  margin-top: 11.5vh;
   margin-left: auto;
   margin-right: auto;
 }
@@ -61,13 +61,14 @@ button:hover {
 .cancelbtn {
   padding: 14px 20px;
   background-color: #f44336;
+  margin-right: 2px;
 }
 
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn,
 .signupbtn {
   float: left;
-  width: 50%;
+  width: 49%;
 }
 
 /* Clear floats */
