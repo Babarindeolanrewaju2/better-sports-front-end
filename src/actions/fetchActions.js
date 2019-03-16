@@ -18,10 +18,10 @@ export function signup(dispatch, firstname, lastname, email, pwd) {
       Accept: "application/json"
     },
     body: JSON.stringify({
-      firstname: firstname,
-      lastname: lastname,
+      first_name: firstname,
+      last_name: lastname,
       email: email,
-      pwd: pwd
+      password: pwd
     })
   })
     .then(res => res.json())

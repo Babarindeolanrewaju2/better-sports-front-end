@@ -98,7 +98,8 @@ const Signup = props => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    signup: (email, pwd) => signup(dispatch, email, pwd)
+    signup: (firstname, lastname, email, pwd) =>
+      signup(dispatch, firstname, lastname, email, pwd)
   };
 }
 
