@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import Home from "./containers/Home";
 import GamesPage from "./containers/GamesPage";
 import Dashboard from "./containers/Dashboard";
+import SignupPage from "./containers/SignupPage";
 
 class App extends Component {
   render() {
@@ -28,6 +29,11 @@ class App extends Component {
           render={routerProps => (
             <Dashboard {...routerProps} games={this.props.games} />
           )}
+        />
+        <Route
+          exact
+          path="/signup"
+          render={routerProps => <SignupPage {...routerProps} />}
         />
       </Fragment>
     );
