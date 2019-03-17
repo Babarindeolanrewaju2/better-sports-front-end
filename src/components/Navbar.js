@@ -10,8 +10,12 @@ const Navbar = () => {
         src="http://localhost:3000/images/betterSportsLogo.png"
         alt="Better Sports Logo"
       />
-      <div className="navLink">Login</div>
-      <div className="navLink">Sign up</div>
+      <div className="navLink">
+        <a href="/login">Login</a>
+      </div>
+      <div className="navLink">
+        <a href="/signup">Sign up</a>
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ const SignupPage = props => {
   return (
     <Fragment>
       <Navbar />
-      <Login />
+      <Login {...props} />
     </Fragment>
   );
 };

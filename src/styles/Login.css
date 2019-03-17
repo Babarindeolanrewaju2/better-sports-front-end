@@ -42,7 +42,7 @@ hr {
 }
 
 /* Set a style for all buttons */
-button {
+/* .loginbtn {
   background-color: #4caf50;
   color: white;
   padding: 14px 20px;
@@ -51,13 +51,21 @@ button {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
-}
+} */
 
 button:hover {
   opacity: 1;
 }
 
 .loginbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
   display: block;
   margin: auto;
   width: 50%;

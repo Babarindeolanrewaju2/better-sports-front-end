@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import { auto_login } from "./actions/fetchActions";
 
 import Home from "./containers/Home";
 import GamesPage from "./containers/GamesPage";
@@ -9,7 +10,21 @@ import SignupPage from "./containers/SignupPage";
 import LoginPage from "./containers/LoginPage";
 
 class App extends Component {
+  // check to see if user already has a JWT stored on browser,
+  // and if so use it to verify who they are
+  componentDidMount() {
+    // check for token
+    let token = localStorage.getItem("token");
+    console.log("token", token);
+
+    if (token) {
+      // login user automatically with their token
+      this.props.auto_login(token);
+    }
+  }
+
   render() {
+    console.log(this.props.currentUser);
     return (
       <Fragment>
         <Route
@@ -56,4 +71,15 @@ function mapStateToProps(state) {
   };
 }
 
-export default withRouter(connect(mapStateToProps)(App));
+function mapDispatchToProps(dispatch) {
+  return {
+    auto_login: token => auto_login(dispatch, token)
+  };
+}
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App)
+);

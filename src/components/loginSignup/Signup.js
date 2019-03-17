@@ -21,7 +21,8 @@ const Signup = props => {
     // form fields are all required, and assure data will be present
     // database requires a unique email
     if (pwd === pwdConfirm) {
-      props.signup(firstname, lastname, email, pwd);
+      props.signup(firstname, lastname, email, pwd, props);
+      props.history.push("/dashboard");
     } else
       alert(
         "Please make sure your password confirmation matches your password."
@@ -103,6 +104,8 @@ const Signup = props => {
   );
 };
 
+// add signup function to props - this functions posts to the /signup endpoint of
+// the API and creates a new user if email is unique
 function mapDispatchToProps(dispatch) {
   return {
     signup: (firstname, lastname, email, pwd) =>

@@ -16,6 +16,7 @@ const Login = props => {
 
     // used login method to verify user in DB and return token or error
     props.login(email, pwd);
+    props.history.push("/dashboard");
     // clear form of current data
     document.getElementById("login").reset();
   }

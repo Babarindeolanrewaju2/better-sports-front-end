@@ -1,5 +1,6 @@
-const GAMES_API = "http://localhost:8000/api/v1/games";
+const AUTO_LOGIN = "http://localhost:8000/api/v1/auto_login";
 const CREATE_ACCT = "http://localhost:8000/api/v1/signup";
+const GAMES_API = "http://localhost:8000/api/v1/games";
 const LOGIN_USER = "http://localhost:8000/api/v1/login";
 //const TEAMS_API = "http://localhost:8000/api/v1/teams";
 
@@ -29,11 +30,16 @@ export function login(dispatch, email, pwd) {
   })
     .then(res => res.json())
     .then(user => {
-      if (user.error) {
-        alert(user.error);
+      if (user.error || user.errors) {
+        if (user.errors) {
+          alert(user.errors);
+        } else {
+          alert(user.error);
+        }
       } else {
-        return dispatch({ type: "CURRENT_USER", payload: user["data"] });
-        // TODO:  PUSH TO Dashboard here
+        console.log(user);
+        localStorage.setItem("token", user.token);
+        dispatch({ type: "CURRENT_USER", payload: user["user"]["data"] });
       }
     });
 }
@@ -59,9 +65,28 @@ export function signup(dispatch, firstname, lastname, email, pwd) {
       if (newUser.error) {
         alert(newUser.error);
       } else {
-        return dispatch({ type: "CURRENT_USER", payload: newUser["data"] });
+        localStorage.setItem("token", newUser.token);
+        return dispatch({
+          type: "CURRENT_USER",
+          payload: newUser["user"]["data"]
+        });
         // TODO:  PUSH TO Dashboard here
       }
+    });
+}
+
+export function auto_login(dispatch, token) {
+  return fetch(AUTO_LOGIN, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: token
+    }
+  })
+    .then(res => res.json())
+    .then(user => {
+      dispatch({ type: "CURRENT_USER", payload: user["data"] });
     });
 }
 
