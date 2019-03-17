@@ -38,8 +38,12 @@ export function login(dispatch, email, pwd) {
         }
       } else {
         console.log(user);
+        console.log(user["user"]["data"]);
         localStorage.setItem("token", user.token);
-        dispatch({ type: "CURRENT_USER", payload: user["user"]["data"] });
+        dispatch({
+          type: "CURRENT_USER",
+          payload: user["user"]["data"]
+        });
       }
     });
 }

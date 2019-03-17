@@ -24,37 +24,50 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.currentUser);
     return (
       <Fragment>
         <Route
           exact
           path="/"
-          render={routerProps => <Home {...routerProps} />}
+          render={routerProps => (
+            <Home {...routerProps} currentUser={this.props.currentUser} />
+          )}
         />
         <Route
           exact
           path="/games"
           render={routerProps => (
-            <GamesPage {...routerProps} games={this.props.games} />
+            <GamesPage
+              {...routerProps}
+              games={this.props.games}
+              currentUser={this.props.currentUser}
+            />
           )}
         />
         <Route
           exact
           path="/dashboard"
           render={routerProps => (
-            <Dashboard {...routerProps} games={this.props.games} />
+            <Dashboard
+              {...routerProps}
+              games={this.props.games}
+              currentUser={this.props.currentUser}
+            />
           )}
         />
         <Route
           exact
           path="/signup"
-          render={routerProps => <SignupPage {...routerProps} />}
+          render={routerProps => (
+            <SignupPage {...routerProps} currentUser={this.props.currentUser} />
+          )}
         />
         <Route
           exact
           path="/login"
-          render={routerProps => <LoginPage {...routerProps} />}
+          render={routerProps => (
+            <LoginPage {...routerProps} currentUser={this.props.currentUser} />
+          )}
         />
       </Fragment>
     );

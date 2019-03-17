@@ -5,7 +5,7 @@ import Games from "../components/Games/Games";
 const GamesPage = props => {
   return (
     <Fragment>
-      <Navbar />
+      <Navbar currentUser={props.currentUser} />
       <Games games={props.games} />
     </Fragment>
   );

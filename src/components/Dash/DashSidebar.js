@@ -1,22 +1,29 @@
 import React from "react";
 
 const DashSidebar = props => {
-  //return curent user info for the sidebar of the dashboard
-  return (
-    <div className="dashSidebar">
-      <div className="userName">
-        <h1>User full name</h1>
+  let user = props.currentUser.attributes;
+
+  if (user) {
+    return (
+      <div className="dashSidebar">
+        <div className="userName">
+          <h1>
+            {user.first_name} {user.last_name}
+          </h1>
+        </div>
+        <div className="userBalance">
+          <h3>Balance: ${user.accounts[0].balance}</h3>
+        </div>
+        <div className="userLinks">
+          <h4>Friends</h4>
+          <h4>Teams</h4>
+          <h4>My Bets</h4>
+        </div>
       </div>
-      <div className="userBalance">
-        <h3>Balance: $MONIES HERE</h3>
-      </div>
-      <div className="userLinks">
-        <h4>Friends</h4>
-        <h4>Teams</h4>
-        <h4>My Bets</h4>
-      </div>
-    </div>
-  );
+    );
+  } else {
+    return <h1> Loading... </h1>;
+  }
 };
 
 export default DashSidebar;
