@@ -8,6 +8,7 @@ import GamesPage from "./containers/GamesPage";
 import Dashboard from "./containers/Dashboard";
 import SignupPage from "./containers/SignupPage";
 import LoginPage from "./containers/LoginPage";
+import AddFunds from "./containers/AddFunds";
 
 class App extends Component {
   // check to see if user already has a JWT stored on browser,
@@ -15,8 +16,6 @@ class App extends Component {
   componentDidMount() {
     // check for token
     let token = localStorage.getItem("token");
-    console.log("token", token);
-
     if (token) {
       // login user automatically with their token
       this.props.auto_login(token);
@@ -68,6 +67,11 @@ class App extends Component {
           render={routerProps => (
             <LoginPage {...routerProps} currentUser={this.props.currentUser} />
           )}
+        />
+        <Route
+          exact
+          path="/addFunds"
+          render={routerProps => <AddFunds {...routerProps} />}
         />
       </Fragment>
     );

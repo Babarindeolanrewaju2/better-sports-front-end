@@ -1,0 +1,50 @@
+/* CSS for adding funds to accout */
+/* route = /addFunds */
+
+.addFundsContainer {
+  width: 99vw;
+  height: 86vh;
+  background-color: #ccc;
+  display: flex;
+}
+
+.addFundsForm {
+  width: 40vw;
+  /* height: 70vh; */
+  background-color: white;
+  margin: auto;
+  padding: 2vh;
+}
+
+.addFundsForm button {
+  width: 5vw;
+  padding: 1vw;
+  font-size: 1em;
+  margin: 1vh;
+}
+
+.addFundsForm button {
+  width: 5vw;
+  padding: 1vw;
+  font-size: 1em;
+  margin: 1vh;
+}
+
+.addFundsForm label {
+  font-size: 1.5em;
+  margin-left: 1.5vh;
+}
+
+.addFundsForm input[type="text"] {
+  width: 7vw;
+  padding: 1vw;
+  font-size: 1em;
+  margin: 1vh;
+}
+
+.addFundsForm input[type="submit"] {
+  width: auto;
+  padding: 1vw;
+  font-size: 1em;
+  margin: 1vh 15vw;
+}

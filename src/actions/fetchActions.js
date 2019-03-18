@@ -37,8 +37,6 @@ export function login(dispatch, email, pwd) {
           alert(user.error);
         }
       } else {
-        console.log(user);
-        console.log(user["user"]["data"]);
         localStorage.setItem("token", user.token);
         dispatch({
           type: "CURRENT_USER",
