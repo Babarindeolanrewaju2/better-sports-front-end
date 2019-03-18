@@ -9,6 +9,7 @@ import Dashboard from "./containers/Dashboard";
 import SignupPage from "./containers/SignupPage";
 import LoginPage from "./containers/LoginPage";
 import AddFunds from "./containers/AddFunds";
+import TermsOfService from "./components/loginSignup/TermsOfService";
 
 class App extends Component {
   // check to see if user already has a JWT stored on browser,
@@ -73,6 +74,7 @@ class App extends Component {
           path="/addFunds"
           render={routerProps => <AddFunds {...routerProps} />}
         />
+        <Route exact path="/betterSportsTerms" component={TermsOfService} />} />
       </Fragment>
     );
   }

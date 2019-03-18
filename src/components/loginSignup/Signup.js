@@ -87,7 +87,7 @@ const Signup = props => {
 
           <p>
             By creating an account you agree to our{" "}
-            <a href="#">Terms & Privacy</a>.
+            <a href="/betterSportsTerms">Terms & Privacy</a>.
           </p>
 
           <div className="clearfix">
