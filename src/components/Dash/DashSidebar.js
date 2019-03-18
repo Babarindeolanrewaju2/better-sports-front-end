@@ -1,5 +1,7 @@
 import React from "react";
 
+import { connect } from "react-redux";
+
 const DashSidebar = props => {
   let user = props.currentUser.attributes;
 
@@ -26,4 +28,10 @@ const DashSidebar = props => {
   }
 };
 
-export default DashSidebar;
+function mapStateToProps(state) {
+  return {
+    currentUser: state.currentUser
+  };
+}
+
+export default connect(mapStateToProps)(DashSidebar);

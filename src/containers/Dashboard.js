@@ -10,10 +10,10 @@ import "../styles/Dashboard.css";
 const Dashboard = props => {
   return (
     <Fragment>
-      <Navbar currentUser={props.currentUser} />
+      <Navbar />
       <div className="dashboardContainer">
         <div className="dashboardLeft">
-          <DashSidebar currentUser={props.currentUser} />
+          <DashSidebar />
         </div>
         <div className="dashboardRight">
           <DashGames games={props.games} />

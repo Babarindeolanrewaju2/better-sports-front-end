@@ -5,7 +5,7 @@ import Homepage from "../components/Homepage";
 const Home = props => {
   return (
     <Fragment>
-      <Navbar currentUser={props.currentUser} />
+      <Navbar />
       <Homepage />
     </Fragment>
   );
