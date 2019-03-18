@@ -9,8 +9,17 @@ export function fetchGames(dispatch) {
   return fetch(GAMES_API)
     .then(res => res.json())
     .then(games => {
-      // TODO: SORT BY DATE BEFORE SENDING TO STATE
-      return dispatch({ type: "UPDATE_GAMES", payload: games["data"] });
+      // Sort by date before sending to redux state
+      let sortedGames = games["data"].sort(function(a, b) {
+        if (a.attributes.match_date > b.attributes.match_date) {
+          return 1;
+        } else if (a.attributes.match_date < b.attributes.match_date) {
+          return -1;
+        }
+        return 0;
+      });
+
+      return dispatch({ type: "UPDATE_GAMES", payload: sortedGames });
     });
 }
 
