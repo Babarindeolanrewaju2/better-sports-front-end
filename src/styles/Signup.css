@@ -6,7 +6,7 @@ body {
   display: flex;
   width: 99vw;
   height: 88vh;
-  background-color: grey;
+  background-color: #ccc;
 }
 
 .signupForm {
@@ -38,7 +38,7 @@ input[type="password"]:focus {
 
 hr {
   border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+  margin-bottom: 0.5vh;
 }
 
 /* Set a style for all buttons */
