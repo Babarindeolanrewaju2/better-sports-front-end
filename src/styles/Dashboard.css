@@ -26,3 +26,21 @@
 .dashBets {
   margin-top: 2vh;
 }
+
+/* a tag as a button */
+
+.button {
+  float: right;
+  background-color: Crimson;
+  border-radius: 5px;
+  color: white;
+  padding: 0.5em;
+  text-decoration: none;
+  margin: 2vh 1vh;
+}
+
+.button:focus,
+.button:hover {
+  background-color: FireBrick;
+  color: White;
+}

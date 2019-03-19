@@ -8,6 +8,9 @@ const DashGames = props => {
 
   return (
     <Fragment>
+      <a href="/games" class="button js-button" role="button">
+        See all games
+      </a>
       <Games games={limitGames} />
     </Fragment>
   );
