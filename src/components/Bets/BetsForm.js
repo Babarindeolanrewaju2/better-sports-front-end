@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-//import { signup } from "../../actions/fetchActions";
+import { makeBet } from "../../actions/betActions";
 
-import "../../styles/Signup.css";
+import "../../styles/BetsForm.css";
 
 class BetsForm extends Component {
   state = {
@@ -29,15 +29,25 @@ class BetsForm extends Component {
     return this.state.amount * parseFloat(this.state.odds);
   };
 
-  handleSubmit = () => {
-    console.log("submitted");
+  handleSubmit = event => {
+    event.preventDefault();
+    let amount = this.state.amount;
+    let odds = this.state.odds;
+    let winner = this.state.winner;
+    let token = localStorage.getItem("token");
+
+    if (amount && odds && winner) {
+      console.log("submitted", this.state);
+    } else {
+      alert("Please select a wager amount and an outcome.");
+    }
   };
 
   render() {
     if (this.props.betInfo !== {}) {
       return (
-        <div className="signupContainer">
-          <div className="signupForm">
+        <div className="betsFormContainer">
+          <div className="betsFormForm">
             <form onSubmit={this.handleSubmit}>
               <h1>Make A Bet</h1>
               <p>
@@ -156,4 +166,14 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(BetsForm);
+const mapDispatchToProps = dispatch => {
+  return {
+    newBet: (token, amt, odds, game) =>
+      makeBet(dispatch, token, amt, odds, game)
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BetsForm);

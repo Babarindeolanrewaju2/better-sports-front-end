@@ -1,0 +1,91 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.betsFormContainer {
+  display: flex;
+  width: 99vw;
+  height: 88vh;
+  background-color: #ccc;
+}
+
+.betsFormForm {
+  background-color: white;
+  width: 40vw;
+  height: 65vh;
+  padding: 1vh 1vw;
+  margin-top: 11.5vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Full-width input fields */
+.betsFormForm input[type="text"] {
+  width: 20%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type="text"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 0.5vh;
+}
+
+/* Set a style for all buttons */
+.signupbtn {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+  color: white;
+  margin: 8px 0;
+  margin-right: 2px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,
+.signupbtn {
+  float: left;
+  width: 49%;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn,
+  .signupbtn {
+    width: 100%;
+  }
+}
