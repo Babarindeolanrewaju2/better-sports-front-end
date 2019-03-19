@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 const DashSidebar = props => {
-  let user = props.currentUser.attributes;
+  let user = props.user.attributes;
 
   if (user) {
     return (

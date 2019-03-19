@@ -15,10 +15,10 @@ const Dashboard = props => {
       <Navbar />
       <div className="dashboardContainer">
         <div className="dashboardLeft">
-          {props.user ? <DashSidebar /> : null}
+          <DashSidebar user={props.user} />
         </div>
         <div className="dashboardRight">
-          <DashGames games={props.games} />
+          <DashGames games={props.games} {...props} />
           <DashBets />
         </div>
       </div>

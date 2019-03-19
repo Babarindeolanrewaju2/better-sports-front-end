@@ -16,13 +16,11 @@ const Login = props => {
 
     // used login method to verify user in DB and return token or error
     console.log(props);
-    props.login(email, pwd, () => {
-      console.log("test");
-      props.history.push("/dashboard");
-    });
+    props.login(email, pwd);
 
     // clear form of current data
     document.getElementById("login").reset();
+    props.history.push("/dashboard");
   }
 
   // display form HTML

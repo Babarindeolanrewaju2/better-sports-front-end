@@ -11,7 +11,7 @@ const DashGames = props => {
       <a href="/games" className="button" role="button">
         See all games
       </a>
-      <Games games={limitGames} />
+      <Games {...props} games={limitGames} />
     </Fragment>
   );
 };

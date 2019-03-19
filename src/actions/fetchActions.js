@@ -52,9 +52,6 @@ export function login(dispatch, email, pwd, callback) {
           type: "CURRENT_USER",
           payload: user["user"]["data"]
         });
-        //console.log(props);
-        //props.history.push("/dashboard");
-        callback && callback();
       }
     });
 }
