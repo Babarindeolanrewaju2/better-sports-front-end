@@ -46,7 +46,6 @@ class BetsForm extends Component {
   };
 
   render() {
-    console.log(this.props);
     if (this.props.betInfo !== {}) {
       return (
         <div className="betsFormContainer">

@@ -53,13 +53,6 @@ class Games extends Component {
   }
 }
 
-// // listen to state to get all games
-// function mapStateToProps(state) {
-//   return {
-//     games: state.games
-//   };
-// }
-
 // allow method to be set as a prop
 function mapDispatchToProps(dispatch) {
   return {
