@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 
+import { connect } from "react-redux";
+
 import Navbar from "../components/Navbar";
 import DashSidebar from "../components/Dash/DashSidebar";
 import DashGames from "../components/Dash/DashGames";
@@ -13,7 +15,7 @@ const Dashboard = props => {
       <Navbar />
       <div className="dashboardContainer">
         <div className="dashboardLeft">
-          <DashSidebar />
+          {props.user ? <DashSidebar /> : null}
         </div>
         <div className="dashboardRight">
           <DashGames games={props.games} />
@@ -24,4 +26,10 @@ const Dashboard = props => {
   );
 };
 
-export default Dashboard;
+const mapStateToProps = state => {
+  return {
+    user: state.currentUser
+  };
+};
+
+export default connect(mapStateToProps)(Dashboard);

@@ -3,7 +3,7 @@ const initialState = {
   bets: [],
   teams: [],
   players: [],
-  currentUser: { attributes: { accounts: [0] } },
+  currentUser: {},
   betInfo: {}
 };
 

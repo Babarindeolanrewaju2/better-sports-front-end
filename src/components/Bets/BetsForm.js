@@ -39,12 +39,14 @@ class BetsForm extends Component {
 
     if (amount && odds && betType) {
       this.props.newBet(token, amount, odds, game, betType);
+      this.props.history.push("/dashboard");
     } else {
       alert("Please select a wager amount and an outcome.");
     }
   };
 
   render() {
+    console.log(this.props);
     if (this.props.betInfo !== {}) {
       return (
         <div className="betsFormContainer">

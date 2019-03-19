@@ -6,7 +6,7 @@ const CreateBets = props => {
   return (
     <Fragment>
       <Navbar />
-      <BetsForm />
+      <BetsForm {...props} />
     </Fragment>
   );
 };
