@@ -1,9 +1,28 @@
 import React from "react";
 
+import { connect } from "react-redux";
+import { disptachBet } from "../../actions/betActions";
+
 const BetButton = props => {
-  //reusable btn for driving to the create bet from
-  // TODO: ADD ACTION TO DRIVE TO FORM
-  return <button type="button">Place Bet</button>;
+  const handleClick = () => {
+    props.createBet(props.game);
+    props.history.push("/bets/new");
+  };
+
+  return (
+    <button type="button" onClick={handleClick}>
+      Place Bet
+    </button>
+  );
 };
 
-export default BetButton;
+const mapDispatchToProps = dispatch => {
+  return {
+    createBet: betInfo => disptachBet(dispatch, betInfo)
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(BetButton);

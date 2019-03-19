@@ -3,7 +3,8 @@ const initialState = {
   bets: [],
   teams: [],
   players: [],
-  currentUser: { attributes: { accounts: [0] } }
+  currentUser: { attributes: { accounts: [0] } },
+  betInfo: {}
 };
 
 function reducer(state = initialState, action) {
@@ -14,6 +15,8 @@ function reducer(state = initialState, action) {
       return { ...state, teams: action.payload };
     case "CURRENT_USER":
       return { ...state, currentUser: action.payload };
+    case "BET_INFO":
+      return { ...state, betInfo: action.payload };
     default:
       return state;
   }

@@ -16,11 +16,12 @@ class Games extends Component {
   // create all match rows for the table to be displayed
   mapGameInfoToMatchCard = () => {
     return this.props.games.map(game => {
-      return <Match key={game.id} game={game} />;
+      return <Match key={game.id} game={game} {...this.props} />;
     });
   };
 
   render() {
+    console.log("GAMES", this.props);
     return (
       <div className="gamesContainer">
         <h1>Future Games</h1>

@@ -23,7 +23,7 @@ const Match = props => {
         <td>{gameDetails.oneDraw}</td>
         <td>{gameDetails.twoDraw}</td>
         <td>
-          <BetButton game={props.game} />
+          <BetButton game={props.game} {...props} />
         </td>
       </tr>
     </Fragment>

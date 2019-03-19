@@ -6,7 +6,7 @@ const GamesPage = props => {
   return (
     <Fragment>
       <Navbar />
-      <Games games={props.games} />
+      <Games {...props} />
     </Fragment>
   );
 };
