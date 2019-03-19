@@ -9,7 +9,7 @@ const Navbar = props => {
     localStorage.removeItem("token");
   };
 
-  if (props.currentUser !== {}) {
+  if (localStorage.getItem("token")) {
     return (
       <div className="nav">
         <img

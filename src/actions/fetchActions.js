@@ -25,7 +25,8 @@ export function fetchGames(dispatch) {
 
 // allows user to login with email and password and returns
 // user object and token to store in state/browser
-export function login(dispatch, email, pwd) {
+export function login(dispatch, email, pwd, callback) {
+  console.log("callback", callback);
   return fetch(LOGIN_USER, {
     method: "POST",
     headers: {
@@ -51,6 +52,9 @@ export function login(dispatch, email, pwd) {
           type: "CURRENT_USER",
           payload: user["user"]["data"]
         });
+        //console.log(props);
+        //props.history.push("/dashboard");
+        callback && callback();
       }
     });
 }

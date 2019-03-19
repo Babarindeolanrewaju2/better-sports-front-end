@@ -15,8 +15,12 @@ const Login = props => {
     let pwd = event.target.password.value;
 
     // used login method to verify user in DB and return token or error
-    props.login(email, pwd);
-    props.history.push("/dashboard");
+    console.log(props);
+    props.login(email, pwd, () => {
+      console.log("test");
+      props.history.push("/dashboard");
+    });
+
     // clear form of current data
     document.getElementById("login").reset();
   }
@@ -60,7 +64,7 @@ const Login = props => {
 // add login method as prop - this does a POST to /login of API and verifies user
 function mapDispatchToProps(dispatch) {
   return {
-    login: (email, pwd) => login(dispatch, email, pwd)
+    login: (email, pwd, callback) => login(dispatch, email, pwd, callback)
   };
 }
 
