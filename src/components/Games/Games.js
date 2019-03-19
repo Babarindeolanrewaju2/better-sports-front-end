@@ -21,7 +21,6 @@ class Games extends Component {
   };
 
   render() {
-    console.log("GAMES", this.props);
     return (
       <div className="gamesContainer">
         <h1>Future Games</h1>

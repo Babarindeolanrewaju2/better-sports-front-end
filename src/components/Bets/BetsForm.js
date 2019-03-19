@@ -11,84 +11,72 @@ const BetsForm = props => {
   };
   console.log("BETSFORM", props);
   // return signup form HTML
-  return (
-    <div className="signupContainer">
-      <div className="signupForm">
-        <form onSubmit={handleSubmit}>
-          <h1>Sign Up</h1>
-          <p>Please fill in this form to create an account.</p>
-          <hr />
-          <label htmlFor="firstname">
-            <b>First name</b>
-          </label>
-          <input
-            type="text"
-            placeholder="Enter first name"
-            name="firstname"
-            required
-          />
-
-          <br />
-          <label htmlFor="lastname">
-            <b>Last name</b>
-          </label>
-          <input
-            type="text"
-            placeholder="Enter last name"
-            name="lastname"
-            required
-          />
-
-          <br />
-          <label htmlFor="email">
-            <b>Email</b>
-          </label>
-          <input type="text" placeholder="Enter Email" name="email" required />
-
-          <br />
-          <label htmlFor="password">
-            <b>Password</b>
-          </label>
-          <input
-            type="password"
-            placeholder="Enter Password"
-            name="password"
-            required
-          />
-          <br />
-          <label htmlFor="password confirmation">
-            <b>Password Confirmation</b>
-          </label>
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            name="passwordConfirmation"
-            required
-          />
-
-          <p>
-            By creating an account you agree to our{" "}
-            <a href="/betterSportsTerms">Terms & Privacy</a>.
-          </p>
-
-          <div className="clearfix">
-            <button type="button" className="cancelbtn">
-              Cancel
+  if (props.betInfo !== {}) {
+    return (
+      <div className="signupContainer">
+        <div className="signupForm">
+          <form onSubmit={handleSubmit}>
+            <h1>Make A Bet</h1>
+            <p>
+              Please select your wager amount and the outcome you are betting
+              on.
+            </p>
+            <hr />
+            <button type="button" value="50" name="add50">
+              $50
             </button>
-            <button type="submit" className="signupbtn">
-              Sign Up
+            <button type="button" value="100" name="add100">
+              $100
             </button>
-          </div>
-        </form>
+            <button type="button" value="250" name="add250">
+              $250
+            </button>
+            <button type="button" value="500" name="add500">
+              $500
+            </button>
+            <label>$</label>
+            <input type="text" name="addValue" placeholder="Enter Amount" />
+            <br />
+            <br />
+            <input type="checkbox" name="homeWin" value="Bike" />{" "}
+            {props.betInfo.meta.homeTeam.name} win
+            <br />
+            <input type="checkbox" name="draw" value="Car" /> Draw
+            <br />
+            <input type="checkbox" name="awayWin" value="Bike" />{" "}
+            {props.betInfo.meta.awayTeam.name} win
+            <br />
+            <input type="checkbox" name="homeDraw" value="Bike" />{" "}
+            {props.betInfo.meta.homeTeam.name} or draw
+            <br />
+            <input type="checkbox" name="awayDraw" value="Bike" />{" "}
+            {props.betInfo.meta.awayTeam.name} or draw
+            <br />
+            <p>
+              By creating an account you agree to our{" "}
+              <a href="/betterSportsTerms">Terms & Privacy</a>.
+            </p>
+            <div className="clearfix">
+              <button type="button" className="cancelbtn">
+                Cancel
+              </button>
+              <button type="submit" className="signupbtn">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <h1>Loading...</h1>;
+  }
 };
 
 const mapStateToProps = state => {
   return {
-    game: state.betInfo
+    betInfo: state.betInfo
   };
 };
 
-export default BetsForm;
+export default connect(mapStateToProps)(BetsForm);
