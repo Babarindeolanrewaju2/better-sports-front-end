@@ -9,7 +9,24 @@ class BetsForm extends Component {
   state = {
     betInfo: this.props.betInfo,
     amount: 0,
-    winner: ""
+    winner: "",
+    odds: ""
+  };
+
+  setAmount = event => {
+    this.setState({ ...this.state, amount: event.target.value });
+  };
+
+  chooseWinner = event => {
+    this.setState({
+      ...this.state,
+      winner: event.target.name,
+      odds: this.props.betInfo.attributes[event.target.value]
+    });
+  };
+
+  calculatePotentialWin = () => {
+    return this.state.amount * parseFloat(this.state.odds);
   };
 
   handleSubmit = () => {
@@ -17,7 +34,6 @@ class BetsForm extends Component {
   };
 
   render() {
-    console.log(this.state.checked);
     if (this.props.betInfo !== {}) {
       return (
         <div className="signupContainer">
@@ -29,42 +45,92 @@ class BetsForm extends Component {
                 on.
               </p>
               <hr />
-              <button type="button" value="50" name="amount">
+              <h3>Home team: {this.state.betInfo.meta.homeTeam.name}</h3>
+              <h3>Away team: {this.state.betInfo.meta.awayTeam.name}</h3>
+              <h4>Select a wager:</h4>
+              <button type="button" value="50" onClick={this.setAmount}>
                 $50
               </button>
-              <button type="button" value="100" name="amount">
+              <button type="button" value="100" onClick={this.setAmount}>
                 $100
               </button>
-              <button type="button" value="250" name="amount">
+              <button type="button" value="250" onClick={this.setAmount}>
                 $250
               </button>
-              <button type="button" value="500" name="amount">
+              <button type="button" value="500" onClick={this.setAmount}>
                 $500
               </button>
               <label>$</label>
-              <input type="text" name="addValue" placeholder="Enter Amount" />
+              <input
+                type="text"
+                placeholder="Enter Amount"
+                onChange={this.setAmount}
+              />
               <br />
-              <br />
-              <button type="button" value="50" name="amount">
+              <h4>Select a outcome:</h4>
+              <button
+                type="button"
+                name="Home Win"
+                value="one"
+                onClick={this.chooseWinner}
+              >
                 {this.state.betInfo.meta.homeTeam.name} win
               </button>
-              <button type="button" value="100" name="amount">
+              <button
+                type="button"
+                name="Draw"
+                value="draw"
+                onClick={this.chooseWinner}
+              >
                 Draw
               </button>
-              <button type="button" value="250" name="amount">
+              <button
+                type="button"
+                name="Away Win"
+                value="two"
+                onClick={this.chooseWinner}
+              >
                 {this.state.betInfo.meta.awayTeam.name} win
               </button>
-              <button type="button" value="500" name="amount">
-                {this.state.betInfo.meta.homeTeam.name} or draw
+              <button
+                type="button"
+                name="Home Win or Draw"
+                value="oneDraw"
+                onClick={this.chooseWinner}
+              >
+                {this.state.betInfo.meta.homeTeam.name} Win or Draw
               </button>
-              <button type="button" value="500" name="amount">
-                {this.state.betInfo.meta.awayTeam.name} or draw
+              <button
+                type="button"
+                name="Away Win or Draw"
+                value="twoDraw"
+                onClick={this.chooseWinner}
+              >
+                {this.state.betInfo.meta.awayTeam.name} Win or Draw
               </button>
-
+              <br />
+              <br />
+              <div className="finalBet">
+                <h3>Your prediction:</h3>
+                <div className="prediciton">
+                  {this.state.winner === "" ? "Guess" : this.state.winner}
+                </div>
+                <div className="odds">
+                  {this.state.odds === "" ? "Odds" : this.state.odds}
+                </div>
+                <div className="wager">
+                  {this.state.amount === 0 ? "Wager" : this.state.amount}
+                </div>
+                <div className="potential">
+                  {this.state.odds === ""
+                    ? "Potential Wine"
+                    : `${this.calculatePotentialWin()}`}
+                </div>
+              </div>
               <br />
               <p>
-                By creating an account you agree to our{" "}
-                <a href="/betterSportsTerms">Terms & Privacy</a>.
+                Betting is a risk, and by placing this bet you acknowledge that
+                you take that risk willingly.
               </p>
               <div className="clearfix">
                 <button type="button" className="cancelbtn">
