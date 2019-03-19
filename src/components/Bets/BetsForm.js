@@ -33,11 +33,12 @@ class BetsForm extends Component {
     event.preventDefault();
     let amount = this.state.amount;
     let odds = this.state.odds;
-    let winner = this.state.winner;
+    let betType = this.state.winner;
     let token = localStorage.getItem("token");
+    let game = this.props.betInfo.id;
 
-    if (amount && odds && winner) {
-      console.log("submitted", this.state);
+    if (amount && odds && betType) {
+      this.props.newBet(token, amount, odds, game, betType);
     } else {
       alert("Please select a wager amount and an outcome.");
     }
@@ -168,8 +169,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    newBet: (token, amt, odds, game) =>
-      makeBet(dispatch, token, amt, odds, game)
+    newBet: (token, amt, odds, game, betType) =>
+      makeBet(dispatch, token, amt, odds, game, betType)
   };
 };
 
