@@ -2,12 +2,15 @@ import React, { Fragment } from "react";
 
 import { connect } from "react-redux";
 
-import BetCard from "./BetCard";
+import AllBetsCards from "./AllBetsCards";
 
-import "../../styles/Games.css";
+import "../../../styles/Games.css";
 
 const MyBets = props => {
   //const bets = props.bets;
+
+  console.log("BETS", props.bets);
+  console.log("GAMES", props.games);
 
   const findGameObject = id => {
     return props.games.find(game => {
@@ -16,9 +19,9 @@ const MyBets = props => {
   };
   // create all bet rows for the table to be displayed
   const mapBetInfoToBetCard = () => {
-    return props.bets.attributes.bets.map(bet => {
+    return props.bets.bets.map(bet => {
       let game = findGameObject(bet.game_id);
-      return <BetCard key={bet.id} bet={bet} game={game} />;
+      return <AllBetsCards key={bet.id} bet={bet} game={game} />;
     });
   };
 
@@ -39,6 +42,7 @@ const MyBets = props => {
                     <th>Your bet</th>
                     <th>Odds</th>
                     <th>Wager</th>
+                    <th>Outcome</th>
                   </tr>
                 </thead>
                 <tbody>{mapBetInfoToBetCard()}</tbody>
@@ -56,7 +60,7 @@ const MyBets = props => {
 // listen to state to get all bets
 function mapStateToProps(state) {
   return {
-    bets: state.currentUser,
+    bets: state.currentUser.attributes,
     games: state.games
   };
 }

@@ -24,6 +24,15 @@ const Navbar = props => {
             Logout
           </a>
         </div>
+        <div className="navLink">
+          <a href="/games">All Games</a>
+        </div>
+        <div className="navLink">
+          <a href="/addFunds">Add Funds</a>
+        </div>
+        <div className="navLink">
+          <a href="/dashboard">Dashboard</a>
+        </div>
       </div>
     );
   } else {

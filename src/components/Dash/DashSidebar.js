@@ -3,7 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 const DashSidebar = props => {
-  let user = props.user.attributes;
+  let user = props.user;
 
   if (user) {
     return (
@@ -14,7 +14,12 @@ const DashSidebar = props => {
           </h1>
         </div>
         <div className="userBalance">
-          <h3>Balance: ${user.accounts[0].balance}</h3>
+          <h3>
+            Balance: $
+            {user.attributes !== undefined
+              ? user.attributes.accounts[0].balance
+              : "Loading..."}
+          </h3>
         </div>
         <div className="userLinks">
           <a href="/addFunds">
@@ -38,3 +43,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(DashSidebar);
+
+//
