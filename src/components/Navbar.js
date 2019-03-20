@@ -23,23 +23,23 @@ const Navbar = props => {
         <div className="links">
           <ul>
             <NavLink className="navLink" to="/dashboard">
-              Dashboard
+              DASHBOARD
             </NavLink>
 
             <NavLink className="navLink" to="/games">
-              All Games
+              ALL GAMES
             </NavLink>
 
             <NavLink className="navLink" to="/bets">
-              Your Bets
+              YOUR BETS
             </NavLink>
 
             <NavLink className="navLink" to="/addFunds">
-              Add Funds
+              ADD FUNDS
             </NavLink>
 
             <NavLink className="navLink" to="/" onClick={logMeOut}>
-              Logout
+              LOGOUT
             </NavLink>
           </ul>
         </div>
@@ -57,11 +57,11 @@ const Navbar = props => {
         <div className="homeLinks">
           <ul>
             <NavLink className="navLink" to="/login">
-              Login
+              LOGIN
             </NavLink>
 
             <NavLink className="navLink" to="/signup">
-              Sign up
+              SIGN UP
             </NavLink>
           </ul>
         </div>
