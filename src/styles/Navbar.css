@@ -18,6 +18,11 @@
   width: 50vw;
 }
 
+.homeLinks {
+  margin-left: auto;
+  width: 22vw;
+}
+
 .navLink {
   display: inline-block;
   width: 8.5vw;
@@ -29,5 +34,5 @@
 }
 
 .navLink:hover {
-  background-color: blue;
+  background-color: #a239ca;
 }

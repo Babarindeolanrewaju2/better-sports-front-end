@@ -53,11 +53,17 @@ const Navbar = props => {
           src="http://localhost:3000/images/betterSportsLogo.png"
           alt="Better Sports Logo"
         />
-        <div className="navLink">
-          <a href="/signup">Sign up</a>
-        </div>
-        <div className="navLink">
-          <a href="/login">Login</a>
+
+        <div className="homeLinks">
+          <ul>
+            <NavLink className="navLink" to="/login">
+              Login
+            </NavLink>
+
+            <NavLink className="navLink" to="/signup">
+              Sign up
+            </NavLink>
+          </ul>
         </div>
       </div>
     );
