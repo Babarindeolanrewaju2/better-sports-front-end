@@ -27,8 +27,6 @@ class MyBets extends Component {
   }
 
   render() {
-    console.log("BETS", this.props.bets);
-    console.log("GAMES", this.props.games);
     if (this.props.bets) {
       return (
         <div className="gamesContainer">

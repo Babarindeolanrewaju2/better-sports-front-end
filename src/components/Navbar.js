@@ -28,6 +28,9 @@ const Navbar = props => {
           <a href="/games">All Games</a>
         </div>
         <div className="navLink">
+          <a href="/bets">Your Bets</a>
+        </div>
+        <div className="navLink">
           <a href="/addFunds">Add Funds</a>
         </div>
         <div className="navLink">
