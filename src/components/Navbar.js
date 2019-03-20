@@ -20,22 +20,28 @@ const Navbar = props => {
             alt="Better Sports Logo"
           />
         </a>
-        <div className="navLink">
-          <NavLink to="/" onClick={logMeOut}>
-            Logout
-          </NavLink>
-        </div>
-        <div className="navLink">
-          <NavLink to="/games">All Games</NavLink>
-        </div>
-        <div className="navLink">
-          <NavLink to="/bets">Your Bets</NavLink>
-        </div>
-        <div className="navLink">
-          <NavLink to="/addFunds">Add Funds</NavLink>
-        </div>
-        <div className="navLink">
-          <NavLink to="/dashboard">Dashboard</NavLink>
+        <div className="links">
+          <ul>
+            <NavLink className="navLink" to="/dashboard">
+              Dashboard
+            </NavLink>
+
+            <NavLink className="navLink" to="/games">
+              All Games
+            </NavLink>
+
+            <NavLink className="navLink" to="/bets">
+              Your Bets
+            </NavLink>
+
+            <NavLink className="navLink" to="/addFunds">
+              Add Funds
+            </NavLink>
+
+            <NavLink className="navLink" to="/" onClick={logMeOut}>
+              Logout
+            </NavLink>
+          </ul>
         </div>
       </div>
     );

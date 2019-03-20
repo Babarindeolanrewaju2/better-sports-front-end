@@ -1,7 +1,7 @@
 /* Navbar CSS */
 
 .nav {
-  display: inline-block;
+  display: flex;
   height: 7vh;
   width: 99vw;
   background-color: #000000;
@@ -13,13 +13,21 @@
   margin: 0;
 }
 
+.links {
+  margin-left: auto;
+  width: 50vw;
+}
+
 .navLink {
-  float: right;
-  width: 150px;
+  display: inline-block;
+  width: 8.5vw;
   text-align: center;
-  font-size: 30px;
-  color: #554971;
-  padding-right: 0.5vh;
-  padding-top: 3vh;
+  font-size: 1.5em;
+  color: #e7dfdd;
+  padding: 1vh;
   text-decoration: none;
+}
+
+.navLink:hover {
+  background-color: blue;
 }
