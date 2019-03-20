@@ -1,8 +1,11 @@
 /* Hopepage CSS, route exact = "/" */
-
+.homepage {
+  width: 99vw;
+  height: 91vh;
+}
 .homepageImg {
   max-width: 100%;
-  height: 700px;
+  height: 70vh;
   overflow: hidden;
   object-fit: cover;
 }
@@ -14,9 +17,10 @@
 
 .homeText {
   margin-top: 0;
-  height: 20vh;
+  height: 17vh;
   font-size: 45px;
-  background-color: #8ac6d0;
+  background-color: #000;
+  padding-top: 4vh;
   text-align: center;
   color: white;
 }

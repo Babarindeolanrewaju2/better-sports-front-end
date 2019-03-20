@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import "../styles/Homepage.css";
 
 const Homepage = () => {
   return (
-    <Fragment>
+    <div className="homepage">
       <div className="homepageImg">
         <img
           className="homeBackground"
@@ -13,9 +13,9 @@ const Homepage = () => {
         />
       </div>
       <p className="homeText">
-        Your first choice of all professional gamblers for the Champions League.
+        Bet on the Champions League, and become your own champion!
       </p>
-    </Fragment>
+    </div>
   );
 };
 
