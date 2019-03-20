@@ -1,6 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 import "../styles/Navbar.css";
 
@@ -20,21 +21,21 @@ const Navbar = props => {
           />
         </a>
         <div className="navLink">
-          <a href="/" onClick={logMeOut}>
+          <NavLink to="/" onClick={logMeOut}>
             Logout
-          </a>
+          </NavLink>
         </div>
         <div className="navLink">
-          <a href="/games">All Games</a>
+          <NavLink to="/games">All Games</NavLink>
         </div>
         <div className="navLink">
-          <a href="/bets">Your Bets</a>
+          <NavLink to="/bets">Your Bets</NavLink>
         </div>
         <div className="navLink">
-          <a href="/addFunds">Add Funds</a>
+          <NavLink to="/addFunds">Add Funds</NavLink>
         </div>
         <div className="navLink">
-          <a href="/dashboard">Dashboard</a>
+          <NavLink to="/dashboard">Dashboard</NavLink>
         </div>
       </div>
     );
