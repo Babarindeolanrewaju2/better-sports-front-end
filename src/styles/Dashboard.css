@@ -2,23 +2,26 @@
 
 .dashboardContainer {
   width: 99vw;
-  height: 86vh;
-  background-color: #ccc;
+  height: 91vh;
+  background-color: rgba(14, 11, 22, 0.85);
+  margin-top: 0;
   display: flex;
 }
 
 .dashboardLeft {
   width: 20vw;
-  height: 84vh;
-  background-color: red;
+  height: 89vh;
+  background-color: #0e0b16;
+  color: #e7dfdd;
   margin: 1vh;
   padding: 0 1vh;
 }
 
 .dashboardRight {
   width: 88vw;
-  height: 84vh;
-  background-color: blue;
+  height: 89vh;
+  background-color: #0e0b16;
+  color: #e7dfdd;
   margin: 1vh 1vh 1vh 0;
   padding: 0 1vh;
 }

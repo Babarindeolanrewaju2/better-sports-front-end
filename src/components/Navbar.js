@@ -12,11 +12,13 @@ const Navbar = props => {
   if (localStorage.getItem("token")) {
     return (
       <div className="nav">
-        <img
-          className="navLogo"
-          src="http://localhost:3000/images/betterSportsLogo.png"
-          alt="Better Sports Logo"
-        />
+        <a href="/dashboard">
+          <img
+            className="navLogo"
+            src="http://localhost:3000/images/betterSportsLogo.png"
+            alt="Better Sports Logo"
+          />
+        </a>
         <div className="navLink">
           <a href="/" onClick={logMeOut}>
             Logout

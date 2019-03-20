@@ -5,12 +5,13 @@ body {
 .signupContainer {
   display: flex;
   width: 99vw;
-  height: 88vh;
-  background-color: #ccc;
+  height: 91vh;
+  background-color: rgba(14, 11, 22, 0.85);
 }
 
 .signupForm {
-  background-color: white;
+  background-color: #0e0b16;
+  color: #e7dfdd;
   width: 40vw;
   height: 65vh;
   padding: 1vh 1vw;
@@ -27,23 +28,23 @@ input[type="password"] {
   margin: 5px 0 22px 0;
   display: inline-block;
   border: none;
-  background: #f1f1f1;
+  background: rgba(14, 11, 22, 0.7);
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-  background-color: #ddd;
+  background: rgba(14, 11, 22, 0.4);
   outline: none;
 }
 
 hr {
-  border: 1px solid #f1f1f1;
+  border: 1px solid #a239ca;
   margin-bottom: 0.5vh;
 }
 
 /* Set a style for all buttons */
 .signupbtn {
-  background-color: #4caf50;
+  background-color: #4717f6;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -58,9 +59,9 @@ button:hover {
 }
 
 /* Extra styles for the cancel button */
-.cancelbtn {
+.cancelSignup {
   padding: 14px 20px;
-  background-color: #f44336;
+  background-color: #a239ca;
   color: white;
   margin: 8px 0;
   margin-right: 2px;
@@ -71,7 +72,7 @@ button:hover {
 }
 
 /* Float cancel and signup buttons and add an equal width */
-.cancelbtn,
+.cancelSignup,
 .signupbtn {
   float: left;
   width: 49%;
@@ -86,7 +87,7 @@ button:hover {
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
-  .cancelbtn,
+  .cancelSignup,
   .signupbtn {
     width: 100%;
   }

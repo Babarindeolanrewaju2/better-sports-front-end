@@ -91,7 +91,7 @@ const Signup = props => {
           </p>
 
           <div className="clearfix">
-            <button type="button" className="cancelbtn">
+            <button type="button" className="cancelSignup">
               Cancel
             </button>
             <button type="submit" className="signupbtn">

@@ -34,4 +34,12 @@ button {
   border-radius: 15px;
   padding: 10px;
   font-weight: bold;
+  background-color: #1cb100;
+  opacity: 0.9;
+}
+
+button:focus,
+button:hover {
+  background-color: #25ec00;
+  color: White;
 }

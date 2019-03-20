@@ -17,6 +17,9 @@ const DashSidebar = props => {
           <h3>Balance: ${user.accounts[0].balance}</h3>
         </div>
         <div className="userLinks">
+          <a href="/addFunds">
+            <h4>Add money to account</h4>
+          </a>
           <h4>Friends</h4>
           <h4>Teams</h4>
           <h4>My Bets</h4>

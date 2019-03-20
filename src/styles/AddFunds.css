@@ -3,15 +3,18 @@
 
 .addFundsContainer {
   width: 99vw;
-  height: 86vh;
-  background-color: #ccc;
+  height: 91vh;
+  background-color: rgba(14, 11, 22, 0.85);
   display: flex;
 }
 
 .addFundsForm {
   width: 40vw;
   /* height: 70vh; */
-  background-color: white;
+  background-color: #0e0b16;
+  color: #e7dfdd;
+  font-size: 1em;
+  font-weight: lighter;
   margin: auto;
   padding: 2vh;
 }
@@ -19,15 +22,12 @@
 .addFundsForm button {
   width: 5vw;
   padding: 1vw;
-  font-size: 1em;
+  font-size: 1.5em;
   margin: 1vh;
-}
-
-.addFundsForm button {
-  width: 5vw;
-  padding: 1vw;
-  font-size: 1em;
-  margin: 1vh;
+  background-color: #0e0b16;
+  color: #4717f6;
+  text-align: center;
+  outline: none;
 }
 
 .addFundsForm label {
@@ -38,8 +38,10 @@
 .addFundsForm input[type="text"] {
   width: 7vw;
   padding: 1vw;
-  font-size: 1em;
+  font-size: 1.3em;
   margin: 1vh;
+  background-color: #0e0b16;
+  color: #4717f6;
 }
 
 .addFundsForm input[type="submit"] {
