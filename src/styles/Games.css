@@ -8,7 +8,8 @@ table {
 
 th {
   height: 50px;
-  background-color: #8ac6d0;
+  background-color: #ccc;
+  color: black;
   font-size: 25px;
 }
 
@@ -18,16 +19,18 @@ tr {
   font-size: 25px;
 }
 
-tbody tr:nth-child(odd) {
-  background-color: #e495e4;
+/* tbody tr:nth-child(odd) { */
+tbody tr {
+  background-color: #ccc;
+  color: #000;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #8ac6d0;
-}
+/* tbody tr:nth-child(even) {
+  background-color: #ccc;
+} */
 
 table {
-  background-color: #ff33cc;
+  background-color: #0e0b16;
 }
 
 button {

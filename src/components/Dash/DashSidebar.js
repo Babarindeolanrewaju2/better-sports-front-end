@@ -3,9 +3,10 @@ import React from "react";
 import { connect } from "react-redux";
 
 const DashSidebar = props => {
-  let user = props.user;
+  let user = props.user.attributes;
 
   if (user) {
+    console.log(user);
     return (
       <div className="dashSidebar">
         <div className="userName">
@@ -16,9 +17,7 @@ const DashSidebar = props => {
         <div className="userBalance">
           <h3>
             Balance: $
-            {user.attributes !== undefined
-              ? user.attributes.accounts[0].balance
-              : "Loading..."}
+            {user !== undefined ? user.accounts[0].balance : "Loading..."}
           </h3>
         </div>
         <div className="userLinks">
