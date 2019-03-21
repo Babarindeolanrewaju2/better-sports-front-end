@@ -20,7 +20,7 @@
 }
 
 .addFundsForm button {
-  width: 5vw;
+  width: auto;
   padding: 1vw;
   font-size: 1.5em;
   margin: 1vh;
@@ -47,6 +47,9 @@
 .addFundsForm input[type="submit"] {
   width: auto;
   padding: 1vw;
-  font-size: 1em;
-  margin: 1vh 15vw;
+  font-size: 2em;
+  margin: 5vh auto 2vh auto;
+  background-color: #0e0b16;
+  color: #4717f6;
+  border-radius: 15px;
 }
