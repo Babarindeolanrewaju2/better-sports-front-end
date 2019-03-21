@@ -8,22 +8,38 @@
   display: flex;
 }
 
+.dashboardContainerRight {
+  width: 78vw;
+  height: 89vh;
+  margin-top: 1vh;
+  margin-right: 1vw;
+}
+
 .dashboardLeft {
   width: 20vw;
-  height: 89vh;
+  height: 87vh;
   background-color: #0e0b16;
   color: #e7dfdd;
   margin: 1vh;
-  padding: 0 1vh;
+  padding: 1vh 1vh;
 }
 
-.dashboardRight {
-  width: 88vw;
-  height: 89vh;
+.dashboardRightTop {
+  width: 77vw;
+  height: 27vh;
+  background-color: #0e0b16;
+  color: #e7dfdd;
+  margin: 0 0vh 1vh 0;
+  padding: 1vh 1vh;
+}
+
+.dashboardRightBottom {
+  width: 77vw;
+  height: 57vh;
   background-color: #0e0b16;
   color: #e7dfdd;
   margin: 1vh 1vh 1vh 0;
-  padding: 0 1vh;
+  padding: 1vh 1vh;
 }
 
 .dashBets {

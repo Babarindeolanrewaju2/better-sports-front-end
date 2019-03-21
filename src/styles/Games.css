@@ -46,3 +46,7 @@ button:hover {
   background-color: #25ec00;
   color: White;
 }
+
+h1 {
+  margin-top: 0;
+}

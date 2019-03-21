@@ -17,9 +17,13 @@ const Dashboard = props => {
         <div className="dashboardLeft">
           <DashSidebar user={props.user} />
         </div>
-        <div className="dashboardRight">
-          <DashGames games={props.games} {...props} />
-          <DashBets />
+        <div className="dashboardContainerRight">
+          <div className="dashboardRightTop">
+            <DashGames games={props.games} {...props} />
+          </div>
+          <div className="dashboardRightBottom">
+            <DashBets />
+          </div>
         </div>
       </div>
     </Fragment>
