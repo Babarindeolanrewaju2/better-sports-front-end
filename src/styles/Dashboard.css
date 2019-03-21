@@ -63,3 +63,10 @@
   background-color: FireBrick;
   color: White;
 }
+
+.userName {
+  font-size: 1.5em;
+}
+.userBalance {
+  font-size: 1.8em;
+}
