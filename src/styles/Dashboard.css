@@ -39,7 +39,7 @@
   background-color: #0e0b16;
   color: #e7dfdd;
   margin: 1vh 1vh 1vh 0;
-  padding: 1vh 1vh;
+  padding: 0.5vh 1vh;
 }
 
 .dashBets {
@@ -55,7 +55,7 @@
   color: white;
   padding: 0.5em;
   text-decoration: none;
-  margin: 2vh 1vh;
+  margin: 0.5vh 1vh;
 }
 
 .button:focus,
