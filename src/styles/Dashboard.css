@@ -35,7 +35,7 @@
 
 .dashboardRightBottom {
   width: 77vw;
-  height: 57vh;
+  height: 58vh;
   background-color: #0e0b16;
   color: #e7dfdd;
   margin: 1vh 1vh 1vh 0;
@@ -55,7 +55,7 @@
   color: white;
   padding: 0.5em;
   text-decoration: none;
-  margin: 0.5vh 1vh;
+  margin: 0.8vh 1vh;
 }
 
 .button:focus,
