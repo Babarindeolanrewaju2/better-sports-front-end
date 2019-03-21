@@ -27,7 +27,8 @@
   background-color: #0e0b16;
   color: #4717f6;
   text-align: center;
-  outline: none;
+  outline-color: invert;
+  outline-width: thick;
 }
 
 .addFundsForm label {
@@ -45,11 +46,12 @@
 }
 
 .addFundsForm input[type="submit"] {
-  width: auto;
+  width: 17vw;
   padding: 1vw;
   font-size: 2em;
-  margin: 5vh auto 2vh auto;
+  margin: 5vh 10vw 2vh 10vw;
   background-color: #0e0b16;
   color: #4717f6;
   border-radius: 15px;
+  outline: none;
 }

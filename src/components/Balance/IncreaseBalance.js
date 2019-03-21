@@ -11,18 +11,21 @@ class IncreaseBalance extends Component {
   };
 
   handleAmountChange = event => {
-    event.target.style.backgroundColor = "red";
-    event.target.style.color = "white";
     this.setState({ amount: parseInt(event.target.value) });
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    const acctId = this.props.user.accounts[0].id;
-    const amt = this.state.amount;
-    const token = localStorage.getItem("token");
-    this.props.addFunds(acctId, amt, token);
-    this.props.history.push("/dashboard");
+
+    if (this.state.amount > 0) {
+      const acctId = this.props.user.accounts[0].id;
+      const amt = this.state.amount;
+      const token = localStorage.getItem("token");
+      this.props.addFunds(acctId, amt, token);
+      this.props.history.push("/dashboard");
+    } else {
+      alert("Please select an amout to add to your account.");
+    }
   };
 
   render() {
