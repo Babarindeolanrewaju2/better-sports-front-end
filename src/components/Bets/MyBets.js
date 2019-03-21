@@ -7,8 +7,6 @@ import BetCard from "./BetCard";
 import "../../styles/Games.css";
 
 const MyBets = props => {
-  //const bets = props.bets;
-
   const findGameObject = id => {
     return props.games.find(game => {
       return parseInt(game.id) === id;
@@ -16,13 +14,13 @@ const MyBets = props => {
   };
   // create all bet rows for the table to be displayed
   const mapBetInfoToBetCard = () => {
-    return props.bets.attributes.bets.map(bet => {
+    return props.limitBets.map(bet => {
       let game = findGameObject(bet.game_id);
       return <BetCard key={bet.id} bet={bet} game={game} />;
     });
   };
 
-  if (props.bets) {
+  if (props.limitBets) {
     return (
       <div className="gamesContainer">
         <h1>Your Bets</h1>
@@ -56,7 +54,6 @@ const MyBets = props => {
 // listen to state to get all bets
 function mapStateToProps(state) {
   return {
-    bets: state.currentUser,
     games: state.games
   };
 }

@@ -6,7 +6,6 @@ const DashSidebar = props => {
   let user = props.user.attributes;
 
   if (user) {
-    console.log(user);
     return (
       <div className="dashSidebar">
         <div className="userName">

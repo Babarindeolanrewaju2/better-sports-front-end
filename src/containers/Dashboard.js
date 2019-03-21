@@ -22,7 +22,7 @@ const Dashboard = props => {
             <DashGames games={props.games} {...props} />
           </div>
           <div className="dashboardRightBottom">
-            <DashBets />
+            <DashBets user={props.user} />
           </div>
         </div>
       </div>
