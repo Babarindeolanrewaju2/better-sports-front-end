@@ -1,13 +1,10 @@
 import React from "react";
 
-import { connect } from "react-redux";
-import { setSelectedTeam } from "../../../../actions/soccerTeamsActions";
+//import { connect } from "react-redux";
 
 const SoccerTeamCard = props => {
   let team = props.team.attributes;
   const handleClick = () => {
-    //console.log(props.team);
-    props.setSelectedTeam(props.team);
     props.routerProps.history.push(`/teams/soccer/${team.id}`);
   };
   return (
@@ -25,13 +22,4 @@ const SoccerTeamCard = props => {
   );
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setSelectedTeam: team => setSelectedTeam(dispatch, team)
-  };
-};
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(SoccerTeamCard);
+export default SoccerTeamCard;
