@@ -5,7 +5,7 @@ import React from "react";
 const SoccerTeamCard = props => {
   let team = props.team.attributes;
   return (
-    <div className="flip-card">
+    <div className="SoccerTeamCard">
       <div className="flip-card-inner">
         <div className="flip-card-front">
           <img src={team.team_logo} alt="Avatar" />
