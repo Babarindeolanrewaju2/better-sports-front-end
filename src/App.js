@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { Route, withRouter } from "react-router-dom";
+
 import { connect } from "react-redux";
 import { auto_login } from "./actions/fetchActions";
+import { fetchTeams } from "./actions/soccerTeamsActions";
 
 import Home from "./containers/Home";
 import GamesPage from "./containers/GamesPage";
@@ -25,7 +27,16 @@ class App extends Component {
       // login user automatically with their token
       this.props.auto_login(token);
     }
+
+    //get all teams
+    this.props.getTeams();
   }
+
+  findSoccerTeam = id => {
+    return this.props.teams.find(team => {
+      return team.id === id;
+    });
+  };
 
   render() {
     return (
@@ -78,7 +89,18 @@ class App extends Component {
         <Route exact path="/bets/new" component={CreateBets} />
         <Route exact path="/bets" component={AllBets} />
         <Route exact path="/teams/soccer" component={TeamsPage} />
-        <Route exact path="/teams/soccer/:id" component={SoccerShowPage} />
+        <Route
+          exact
+          path="/teams/soccer/:id"
+          render={routerProps => {
+            let soccerTeam = this.findSoccerTeam(routerProps.match.params.id);
+            return soccerTeam ? (
+              <SoccerShowPage team={soccerTeam} />
+            ) : (
+              <h1>LOADING</h1>
+            );
+          }}
+        />
       </Fragment>
     );
   }
@@ -96,7 +118,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    auto_login: token => auto_login(dispatch, token)
+    auto_login: token => auto_login(dispatch, token),
+    getTeams: () => fetchTeams(dispatch)
   };
 }
 
@@ -106,8 +129,3 @@ export default withRouter(
     mapDispatchToProps
   )(App)
 );
-
-// render={routerProps => {
-//   let soccerTeam = this.findSoccerTeam(routerProps.match.params.id);
-//   return soccerTeam ? <SoccerShowPage /> : <h1>LOADING</h1>;
-// }}

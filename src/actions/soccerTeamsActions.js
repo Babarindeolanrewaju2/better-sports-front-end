@@ -15,3 +15,7 @@ export function fetchTeams(dispatch) {
 export function setSelectedTeam(dispatch, team) {
   return dispatch({ type: "SELECTED_TEAM", payload: team });
 }
+
+export function setSelectedPlayer(dispatch, player) {
+  return dispatch({ type: "SELECTED_PLAYER", payload: player });
+}
