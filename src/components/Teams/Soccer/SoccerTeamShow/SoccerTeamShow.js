@@ -6,13 +6,9 @@ import { connect } from "react-redux";
 
 import "../../../../styles/SoccerTeams.css";
 
-class SoccerTeamShow extends Component {
-  // componentDidMount() {
-  //   this.props.getTeams();
-  // }
+const SoccerTeamShow = props => {
 
   render() {
-    console.log(this.props.teams);
     console.log(this.props.selectedTeam);
     return (
       <div className="soccerTeamsContainer">
@@ -31,10 +27,10 @@ const mapStateToProps = state => {
   };
 };
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     getTeams: () => fetchTeams(dispatch)
-//   };
-// };
+const mapDispatchToProps = dispatch => {
+  return {
+    setSelectedPlayer: (player) => setSelectedPlayer(dispatch, player)
+  };
+};
 
 export default connect(mapStateToProps)(SoccerTeamShow);
