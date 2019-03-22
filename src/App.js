@@ -13,6 +13,7 @@ import TermsOfService from "./components/loginSignup/TermsOfService";
 import CreateBets from "./containers/CreateBets";
 import AllBets from "./containers/AllBets";
 import TeamsPage from "./containers/TeamsPage";
+import SoccerShowPage from "./containers/SoccerShowPage";
 
 class App extends Component {
   // check to see if user already has a JWT stored on browser,
@@ -77,6 +78,7 @@ class App extends Component {
         <Route exact path="/bets/new" component={CreateBets} />
         <Route exact path="/bets" component={AllBets} />
         <Route exact path="/teams/soccer" component={TeamsPage} />
+        <Route exact path="/teams/soccer/:id" component={SoccerShowPage} />
       </Fragment>
     );
   }
@@ -104,3 +106,8 @@ export default withRouter(
     mapDispatchToProps
   )(App)
 );
+
+// render={routerProps => {
+//   let soccerTeam = this.findSoccerTeam(routerProps.match.params.id);
+//   return soccerTeam ? <SoccerShowPage /> : <h1>LOADING</h1>;
+// }}

@@ -14,12 +14,13 @@ class SoccerTeams extends Component {
 
   mapTeamsToTeamCard = () => {
     return this.props.teams.map(team => {
-      return <SoccerTeamCard key={team.id} team={team} />;
+      return (
+        <SoccerTeamCard key={team.id} team={team} routerProps={this.props} />
+      );
     });
   };
 
   render() {
-    console.log(this.props.teams);
     return (
       <div className="soccerTeamsContainer">
         <div className="soccerTeamsHeader">

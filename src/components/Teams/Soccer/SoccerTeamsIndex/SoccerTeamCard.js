@@ -4,8 +4,13 @@ import React from "react";
 
 const SoccerTeamCard = props => {
   let team = props.team.attributes;
+  const handleClick = () => {
+    console.log(props.team);
+
+    //props.routerProps.history.push(`/teams/soccer/${team.id}`);
+  };
   return (
-    <div className="SoccerTeamCard">
+    <div className="SoccerTeamCard" onClick={handleClick}>
       <div className="flip-card-inner">
         <div className="flip-card-front">
           <img src={team.team_logo} alt="Avatar" />
@@ -19,4 +24,13 @@ const SoccerTeamCard = props => {
   );
 };
 
-export default SoccerTeamCard;
+const mapDispatchToProps = dispatch => {
+  return {
+    setSelectedTeam: team => setSelectedTeam(dispatch, team)
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(SoccerTeamCard);

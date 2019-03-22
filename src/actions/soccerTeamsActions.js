@@ -8,3 +8,10 @@ export function fetchTeams(dispatch) {
       return dispatch({ type: "UPDATE_TEAMS", payload: teams["data"] });
     });
 }
+
+// setSelectedTeam is called on the Teams Index page when a user selects a team to
+// click through to the team show page
+
+export function setSelectedTeam(dispatch, team) {
+  return dispatch({ type: "SELECTED_TEAM", payload: team });
+}
