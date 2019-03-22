@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import { setSelectedTeam } from "../../../../actions/soccerTeamsActions";
 
 //import SoccerTeamCard from "./SoccerTeamCard";
 
@@ -14,6 +13,7 @@ class SoccerTeamShow extends Component {
 
   render() {
     console.log(this.props.teams);
+    console.log(this.props.selectedTeam);
     return (
       <div className="soccerTeamsContainer">
         <div className="soccerTeamsHeader">
@@ -26,17 +26,15 @@ class SoccerTeamShow extends Component {
 
 const mapStateToProps = state => {
   return {
-    teams: state.teams
+    teams: state.teams,
+    selectedTeam: state.selectedTeam
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getTeams: () => fetchTeams(dispatch)
-  };
-};
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     getTeams: () => fetchTeams(dispatch)
+//   };
+// };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SoccerTeamShow);
+export default connect(mapStateToProps)(SoccerTeamShow);

@@ -1,13 +1,14 @@
 import React from "react";
 
-//import BetButton from "./BetButton";
+import { connect } from "react-redux";
+import { setSelectedTeam } from "../../../../actions/soccerTeamsActions";
 
 const SoccerTeamCard = props => {
   let team = props.team.attributes;
   const handleClick = () => {
-    console.log(props.team);
-
-    //props.routerProps.history.push(`/teams/soccer/${team.id}`);
+    //console.log(props.team);
+    props.setSelectedTeam(props.team);
+    props.routerProps.history.push(`/teams/soccer/${team.id}`);
   };
   return (
     <div className="SoccerTeamCard" onClick={handleClick}>

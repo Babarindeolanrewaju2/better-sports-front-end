@@ -9,6 +9,7 @@ const initialState = {
 };
 
 function reducer(state = initialState, action) {
+  console.log("REDUCER", action);
   switch (action.type) {
     case "UPDATE_GAMES":
       return { ...state, games: action.payload };
