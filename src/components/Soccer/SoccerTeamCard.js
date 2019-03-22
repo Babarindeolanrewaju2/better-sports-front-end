@@ -5,8 +5,16 @@ import React from "react";
 const SoccerTeamCard = props => {
   let team = props.team.attributes;
   return (
-    <div className="SoccerTeamCard">
-      <img src={team.team_logo} />
+    <div className="flip-card">
+      <div className="flip-card-inner">
+        <div className="flip-card-front">
+          <img src={team.team_logo} alt="Avatar" />
+        </div>
+        <div className="flip-card-back">
+          <h1>{team.name}</h1>
+          <h3>{team.league}</h3>
+        </div>
+      </div>
     </div>
   );
 };
