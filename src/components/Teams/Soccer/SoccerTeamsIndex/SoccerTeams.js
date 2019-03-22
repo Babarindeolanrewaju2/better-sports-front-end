@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import { fetchTeams } from "../../actions/soccerTeamsActions";
+import { fetchTeams } from "../../../../actions/soccerTeamsActions";
 
 import SoccerTeamCard from "./SoccerTeamCard";
 
-import "../../styles/SoccerTeams.css";
+import "../../../../styles/SoccerTeams.css";
 
 class SoccerTeams extends Component {
   componentDidMount() {
