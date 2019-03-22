@@ -12,6 +12,7 @@ import AddFunds from "./containers/AddFunds";
 import TermsOfService from "./components/loginSignup/TermsOfService";
 import CreateBets from "./containers/CreateBets";
 import AllBets from "./containers/AllBets";
+import TeamsPage from "./containers/TeamsPage";
 
 class App extends Component {
   // check to see if user already has a JWT stored on browser,
@@ -75,6 +76,7 @@ class App extends Component {
         <Route exact path="/betterSportsTerms" component={TermsOfService} />
         <Route exact path="/bets/new" component={CreateBets} />
         <Route exact path="/bets" component={AllBets} />
+        <Route exact path="/teams/soccer" component={TeamsPage} />
       </Fragment>
     );
   }

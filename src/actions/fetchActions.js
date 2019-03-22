@@ -2,7 +2,6 @@ const AUTO_LOGIN = "http://localhost:8000/api/v1/auto_login";
 const CREATE_ACCT = "http://localhost:8000/api/v1/signup";
 const GAMES_API = "http://localhost:8000/api/v1/games";
 const LOGIN_USER = "http://localhost:8000/api/v1/login";
-//const TEAMS_API = "http://localhost:8000/api/v1/teams";
 
 // fetches all games from API and updates state to include them
 export function fetchGames(dispatch) {
