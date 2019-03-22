@@ -6,7 +6,7 @@ const SoccerTeamCard = props => {
   let team = props.team.attributes;
   return (
     <div className="SoccerTeamCard">
-      <h1>{team.name}</h1>
+      <img src={team.team_logo} />
     </div>
   );
 };
