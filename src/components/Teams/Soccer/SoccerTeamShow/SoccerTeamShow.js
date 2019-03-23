@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
-import { setSelectedPlayer } from "../../../../actions/soccerTeamsActions";
+import { fetchTeamPlayers } from "../../../../actions/soccerTeamsActions";
 
 //import SoccerTeamCard from "./SoccerTeamCard";
 
@@ -19,12 +19,19 @@ class SoccerTeamShow extends Component {
   };
 
   componentDidMount() {
-    //write method to mapDispatchToProps to get all team players
+    let token = localStorage.getItem("token");
+    let teamId = this.props.match.params.id;
+
+    fetchTeamPlayers(token, teamId).then(players => {
+      console.log(players);
+      this.setState({ players: players });
+    });
   }
 
   render() {
     let teamId = this.props.match.params.id;
     let team = this.findTeam(teamId);
+    console.log(this.state.players);
     if (team === undefined) {
       return (
         <div className="soccerTeamsContainer">
