@@ -6,7 +6,7 @@ const SoccerShowPage = props => {
   return (
     <Fragment>
       <Navbar />
-      <SoccerTeamShow />
+      <SoccerTeamShow {...props} />
     </Fragment>
   );
 };

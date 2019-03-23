@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import { setSelectedPlayer } from "../../../../actions/soccerTeamsActions";
@@ -7,40 +7,53 @@ import { setSelectedPlayer } from "../../../../actions/soccerTeamsActions";
 
 import "../../../../styles/SoccerTeams.css";
 
-const SoccerTeamShow = props => {
-  console.log(props.selectedTeam);
-  console.log(props.teams);
+class SoccerTeamShow extends Component {
+  findTeam = id => {
+    return this.props.teams.find(team => {
+      return team.id === id;
+    });
+  };
 
-  if (props.selectedTeam) {
-    return (
-      <div className="soccerTeamsContainer">
-        <div className="soccerTeamsHeader">
-          <img
-            src="https://media.giphy.com/media/qBYY1bBX10Y6I/giphy.gif"
-            alt="loading spinner"
-          />
-        </div>
-      </div>
-    );
-  } else {
-    let team = props.selectedTeam.attributes;
-    return (
-      <div className="soccerTeamsContainer">
-        <div className="soccerTeamsHeader">
-          <h1>{team.name}</h1>
-          <h3>{team.stadium_location}</h3>
-          <h3>{team.stadium_location}</h3>
-          <img src={team.team_logo} alt="team logo" />
-        </div>
-      </div>
-    );
+  componentDidMount() {
+    //write method to mapDispatchToProps to get all team players
   }
-};
+
+  render() {
+    let teamId = this.props.match.params.id;
+    let team = this.findTeam(teamId);
+    team && console.log(team.attributes);
+    if (this.props.team === undefined) {
+      return (
+        <div className="soccerTeamsContainer">
+          <div className="soccerTeamsHeader">
+            <img
+              src="https://media.giphy.com/media/qBYY1bBX10Y6I/giphy.gif"
+              alt="loading spinner"
+            />
+          </div>
+        </div>
+      );
+    } else {
+      let teamId = this.props.match.params.id;
+      let team = this.findTeam(teamId);
+      console.log(team);
+      return (
+        <div className="soccerTeamsContainer">
+          <div className="soccerTeamsHeader">
+            <h1>{team.name}</h1>
+            <h3>{team.stadium_location}</h3>
+            <h3>{team.stadium_location}</h3>
+            <img src={team.team_logo} alt="team logo" />
+          </div>
+        </div>
+      );
+    }
+  }
+}
 
 const mapStateToProps = state => {
   return {
-    teams: state.teams,
-    selectedTeam: state.selectedTeam
+    teams: state.teams
   };
 };
 

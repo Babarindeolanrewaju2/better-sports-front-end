@@ -32,12 +32,6 @@ class App extends Component {
     this.props.getTeams();
   }
 
-  findSoccerTeam = id => {
-    return this.props.teams.find(team => {
-      return team.id === id;
-    });
-  };
-
   render() {
     return (
       <Fragment>
@@ -89,18 +83,7 @@ class App extends Component {
         <Route exact path="/bets/new" component={CreateBets} />
         <Route exact path="/bets" component={AllBets} />
         <Route exact path="/teams/soccer" component={TeamsPage} />
-        <Route
-          exact
-          path="/teams/soccer/:id"
-          render={routerProps => {
-            let soccerTeam = this.findSoccerTeam(routerProps.match.params.id);
-            return soccerTeam ? (
-              <SoccerShowPage team={soccerTeam} />
-            ) : (
-              <h1>LOADING</h1>
-            );
-          }}
-        />
+        <Route exact path="/teams/soccer/:id" component={SoccerShowPage} />
       </Fragment>
     );
   }
