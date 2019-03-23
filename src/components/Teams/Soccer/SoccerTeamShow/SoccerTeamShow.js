@@ -8,6 +8,10 @@ import { setSelectedPlayer } from "../../../../actions/soccerTeamsActions";
 import "../../../../styles/SoccerTeams.css";
 
 class SoccerTeamShow extends Component {
+  state = {
+    players: {}
+  };
+
   findTeam = id => {
     return this.props.teams.find(team => {
       return team.id === id;
@@ -21,8 +25,7 @@ class SoccerTeamShow extends Component {
   render() {
     let teamId = this.props.match.params.id;
     let team = this.findTeam(teamId);
-    team && console.log(team.attributes);
-    if (this.props.team === undefined) {
+    if (team === undefined) {
       return (
         <div className="soccerTeamsContainer">
           <div className="soccerTeamsHeader">
@@ -34,16 +37,24 @@ class SoccerTeamShow extends Component {
         </div>
       );
     } else {
-      let teamId = this.props.match.params.id;
-      let team = this.findTeam(teamId);
-      console.log(team);
+      console.log(team.attributes);
       return (
-        <div className="soccerTeamsContainer">
+        <div className="soccerTeamContainer">
           <div className="soccerTeamsHeader">
-            <h1>{team.name}</h1>
-            <h3>{team.stadium_location}</h3>
-            <h3>{team.stadium_location}</h3>
-            <img src={team.team_logo} alt="team logo" />
+            <h1>{team.attributes.name}</h1>
+          </div>
+          <h3>{team.attributes.stadium_location}</h3>
+
+          <img src={team.attributes.team_logo} alt="team logo" />
+          <p>{team.attributes.description}</p>
+          <hr />
+
+          <div className="teamShowPlayers">
+            <h2>Players</h2>
+          </div>
+
+          <div className="teamShowStadium">
+            <h2>{team.attributes.home_stadium}</h2>
           </div>
         </div>
       );
@@ -54,12 +65,6 @@ class SoccerTeamShow extends Component {
 const mapStateToProps = state => {
   return {
     teams: state.teams
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    setSelectedPlayer: player => setSelectedPlayer(dispatch, player)
   };
 };
 
