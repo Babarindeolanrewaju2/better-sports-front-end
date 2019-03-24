@@ -3,9 +3,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchTeamPlayers } from "../../../../actions/soccerTeamsActions";
 
+import PlayerThumbnail from "./PlayerThumbnail";
+
 //import SoccerTeamCard from "./SoccerTeamCard";
 
-import "../../../../styles/SoccerTeams.css";
+import "../../../../styles/SoccerTeam.css";
 
 class SoccerTeamShow extends Component {
   state = {
@@ -15,6 +17,12 @@ class SoccerTeamShow extends Component {
   findTeam = id => {
     return this.props.teams.find(team => {
       return team.id === id;
+    });
+  };
+
+  mapPlayersToPlayerThumb = () => {
+    return this.state.players.map(player => {
+      return <PlayerThumbnail key={player.id} player={player} />;
     });
   };
 
@@ -33,8 +41,8 @@ class SoccerTeamShow extends Component {
     console.log(this.state.players);
     if (team === undefined) {
       return (
-        <div className="soccerTeamsContainer">
-          <div className="soccerTeamsHeader">
+        <div className="soccerTeamContainer">
+          <div className="soccerTeamWait">
             <img
               src="https://media.giphy.com/media/qBYY1bBX10Y6I/giphy.gif"
               alt="loading spinner"
@@ -46,21 +54,28 @@ class SoccerTeamShow extends Component {
       console.log(team.attributes);
       return (
         <div className="soccerTeamContainer">
-          <div className="soccerTeamsHeader">
+          <div className="soccerTeamDetails">
+            <img src={team.attributes.team_logo} alt="team logo" />
             <h1>{team.attributes.name}</h1>
-          </div>
-          <h3>{team.attributes.stadium_location}</h3>
+            <h3>{team.attributes.stadium_location}</h3>
+            <h3>
+              {team.attributes.manager && `Manager: ${team.attributes.manager}`}
+            </h3>
 
-          <img src={team.attributes.team_logo} alt="team logo" />
-          <p>{team.attributes.description}</p>
-          <hr />
+            <p>{team.attributes.description}</p>
+          </div>
+          {/* TODO: REFACTOR TEAM DETAILS INTO OWN COMPONENT HERE?*/}
+
+          {/*<hr />*/}
 
           <div className="teamShowPlayers">
-            <h2>Players</h2>
+            <h2>{team.attributes.name} Players:</h2>
+            {this.mapPlayersToPlayerThumb()}
           </div>
 
           <div className="teamShowStadium">
             <h2>{team.attributes.home_stadium}</h2>
+            {/* TODO: ADD STADIUM DEETS HERE*/}
           </div>
         </div>
       );

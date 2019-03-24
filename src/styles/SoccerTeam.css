@@ -1,0 +1,23 @@
+.soccerTeamContainer {
+  margin-top: 0;
+  width: 99vw;
+  min-height: 91vh;
+  background-color: rgba(14, 11, 22, 0.85);
+}
+
+.soccerTeamWait {
+}
+
+.soccerTeamDetails {
+}
+
+.soccerTeamDetails img {
+  height: 30vh;
+  padding: 3vh;
+}
+
+.teamShowPlayers {
+}
+
+.teamShowStadium {
+}
