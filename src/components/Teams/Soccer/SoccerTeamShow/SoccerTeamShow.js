@@ -19,12 +19,11 @@ class SoccerTeamShow extends Component {
   };
 
   componentDidMount() {
-    let token = localStorage.getItem("token");
     let teamId = this.props.match.params.id;
-
-    fetchTeamPlayers(token, teamId).then(players => {
-      console.log(players);
-      this.setState({ players: players });
+    console.log("ID", teamId);
+    fetchTeamPlayers(teamId).then(players => {
+      //console.log(players);
+      this.setState({ players: players["data"] });
     });
   }
 
