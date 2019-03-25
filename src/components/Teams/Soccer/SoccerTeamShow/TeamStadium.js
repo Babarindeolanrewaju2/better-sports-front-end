@@ -8,21 +8,33 @@ const TeamStadium = props => {
 
   return (
     <Fragment>
-      <div className="teamShowStadiumImage">
-        <img
-          src={
-            team.stadium_thumbnail ||
-            "http://localhost:3000/images/standard_stadium.jpg"
-          }
-          alt="Stadium"
-        />
-      </div>
+      <div className="teamShowStadiumHeader">
+        <div className="teamShowStadiumImage">
+          <img
+            src={
+              team.stadium_thumbnail ||
+              "http://localhost:3000/images/standard_stadium.jpg"
+            }
+            alt="Stadium"
+          />
+        </div>
 
-      <div className="teamShowStadiumName">
-        <h2>
-          Stadium: <br />
-          {team.home_stadium}{" "}
-        </h2>
+        <div className="teamShowStadiumName">
+          <h2>
+            Stadium: <br />
+            {team.home_stadium}{" "}
+          </h2>
+        </div>
+
+        <div className="teamShowStadiumImage">
+          <img
+            src={
+              team.team_jersey ||
+              "http://localhost:3000/images/standard_stadium.jpg"
+            }
+            alt="Stadium"
+          />
+        </div>
       </div>
 
       <div className="teamShowStadiumDetails">

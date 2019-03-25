@@ -129,18 +129,22 @@
   padding-bottom: 5vh;
 }
 
+.teamShowStadiumHeader {
+  display: flex;
+}
+
 .teamShowStadiumName {
-  /* float: left; */
   font-size: 3em;
   padding: 1vh 1vh;
   text-align: center;
   color: #e7dfdd;
+  margin: auto;
 }
 
 .teamShowStadiumImage img {
-  float: left;
-  margin: 2vh;
-  max-height: 25vh;
+  margin: auto;
+  padding: 2vh;
+  max-height: 20vh;
 }
 
 .teamShowStadiumDetails {
