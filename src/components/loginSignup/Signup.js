@@ -94,7 +94,7 @@ const Signup = props => {
             <button type="button" className="cancelSignup">
               Cancel
             </button>
-            <button type="submit" className="signupbtn">
+            <button type="submit" className="signUpBtn">
               Sign Up
             </button>
           </div>

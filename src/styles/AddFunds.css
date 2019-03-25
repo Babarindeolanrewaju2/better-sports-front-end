@@ -4,12 +4,11 @@
 .addFundsContainer {
   width: 99vw;
   height: 91vh;
-  background-color: rgba(14, 11, 22, 0.85);
   display: flex;
 }
 
 .addFundsForm {
-  width: 40vw;
+  width: 35vw;
   /* height: 70vh; */
   background-color: #0e0b16;
   color: #e7dfdd;

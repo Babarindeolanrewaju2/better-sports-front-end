@@ -6,7 +6,6 @@ body {
   display: flex;
   width: 99vw;
   height: 91vh;
-  background-color: rgba(14, 11, 22, 0.85);
 }
 
 .signupForm {
@@ -43,18 +42,20 @@ hr {
 }
 
 /* Set a style for all buttons */
-.signupbtn {
-  background-color: #4717f6;
+.signUpBtn {
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
   width: 100%;
-  opacity: 0.9;
+  opacity: 0.8;
+  background-color: dodgerblue;
+  font-size: 1em;
 }
 
-button:hover {
+.signUpBtn:hover {
+  background-color: dodgerblue;
   opacity: 1;
 }
 
@@ -68,12 +69,18 @@ button:hover {
   border: none;
   cursor: pointer;
   width: 100%;
-  opacity: 0.9;
+  opacity: 0.8;
+  font-size: 1em;
+}
+
+.cancelSignup:hover {
+  background-color: #a239ca;
+  opacity: 1;
 }
 
 /* Float cancel and signup buttons and add an equal width */
 .cancelSignup,
-.signupbtn {
+.signUpBtn {
   float: left;
   width: 49%;
 }
@@ -88,7 +95,7 @@ button:hover {
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
   .cancelSignup,
-  .signupbtn {
+  .signUpBtn {
     width: 100%;
   }
 }

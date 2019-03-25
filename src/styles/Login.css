@@ -6,7 +6,6 @@ body {
   display: flex;
   width: 99vw;
   height: 88vh;
-  background-color: #ccc;
 }
 
 .loginForm {
