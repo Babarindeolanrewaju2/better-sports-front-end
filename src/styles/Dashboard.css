@@ -1,9 +1,12 @@
 /* User Dashboard CSS */
+html {
+  background-color: rgba(14, 11, 22, 0.85);
+}
 
 .dashboardContainer {
   width: 99vw;
   height: 91vh;
-  background-color: rgba(14, 11, 22, 0.85);
+  /* background-color: rgba(14, 11, 22, 0.85); */
   margin-top: 0;
   display: flex;
 }
@@ -12,7 +15,7 @@
   width: 78vw;
   height: 89vh;
   margin-top: 1vh;
-  margin-right: 1vw;
+  margin-right: 1vh;
 }
 
 .dashboardLeft {
@@ -20,7 +23,7 @@
   height: 87vh;
   background-color: #0e0b16;
   color: #e7dfdd;
-  margin: 1vh;
+  margin: 1vh 1vh 1vh 0;
   padding: 1vh 1vh;
 }
 
