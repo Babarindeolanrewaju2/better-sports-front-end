@@ -3,9 +3,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchTeamPlayers } from "../../../../actions/soccerTeamsActions";
 
+import TeamDetails from "./TeamDetails";
 import PlayerThumbnail from "./PlayerThumbnail";
-
-//import SoccerTeamCard from "./SoccerTeamCard";
 
 import "../../../../styles/SoccerTeam.css";
 
@@ -55,23 +54,19 @@ class SoccerTeamShow extends Component {
       return (
         <div className="soccerTeamContainer">
           <div className="soccerTeamDetails">
-            <img src={team.attributes.team_logo} alt="team logo" />
-            <h1>{team.attributes.name}</h1>
-            <h3>{team.attributes.stadium_location}</h3>
-            <h3>
-              {team.attributes.manager && `Manager: ${team.attributes.manager}`}
-            </h3>
-
-            <p>{team.attributes.description}</p>
+            <TeamDetails team={team} />
           </div>
           {/* TODO: REFACTOR TEAM DETAILS INTO OWN COMPONENT HERE?*/}
 
-          {/*<hr />*/}
+          <hr />
 
           <div className="teamShowPlayers">
             <h2>{team.attributes.name} Players:</h2>
+            <br />
             {this.mapPlayersToPlayerThumb()}
           </div>
+
+          <hr />
 
           <div className="teamShowStadium">
             <h2>{team.attributes.home_stadium}</h2>

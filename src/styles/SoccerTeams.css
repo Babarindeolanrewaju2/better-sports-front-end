@@ -67,7 +67,6 @@
 /* Style the front side (fallback if image is missing) */
 .soccer-card-front {
   background-color: #000;
-  /* padding: 1vh; */
   color: black;
 }
 

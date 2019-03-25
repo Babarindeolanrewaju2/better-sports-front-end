@@ -9,14 +9,96 @@
 }
 
 .soccerTeamDetails {
+  width: 100%;
 }
 
-.soccerTeamDetails img {
+.teamBio {
+  display: flex;
+  color: #e7dfdd;
+}
+
+.teamImage img {
   height: 30vh;
   padding: 3vh;
 }
 
+.teamDetails h1 {
+  font-size: 3em;
+  padding: 3vh;
+}
+
+.teamDetails h3 {
+  font-size: 1.5em;
+  padding: 0 3vh;
+}
+
+.teamDescription {
+  font-size: 1.5em;
+  padding: 0 3vh;
+  color: #e7dfdd;
+}
+
+/* All Player Information */
+
 .teamShowPlayers {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.playerCard {
+  margin: 1vh auto;
+  padding: 1vh;
+  width: 15vw;
+  height: 23.5vh;
+  background-color: black;
+  /* background-color: transparent; */
+  border: 2px solid dodgerblue;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.playerCard img {
+  /* max-width: 15vw; */
+  max-height: 23.5vh;
+}
+
+.player-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.playerCard:hover .player-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.player-card-front,
+.player-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.player-card-front {
+  background-color: #000;
+  color: black;
+}
+
+.player-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.player-card-back h1 {
+  padding-top: 1vh;
 }
 
 .teamShowStadium {
