@@ -4,10 +4,10 @@ html {
 }
 
 .dashboardContainer {
-  width: 99vw;
+  width: 98.5vw;
   height: 91vh;
   /* background-color: rgba(14, 11, 22, 0.85); */
-  margin-top: 0;
+  margin: 0 0.2vw 0.2vw 0.3vw;
   display: flex;
   font-family: "Varela Round", "Comfortaa", sans-serif;
 }
@@ -21,19 +21,19 @@ html {
 
 .dashboardLeft {
   width: 20vw;
-  height: 87vh;
+  height: 88vh;
   background-color: #0e0b16;
   color: #e7dfdd;
-  margin: 1vh 1vh 1vh 0;
+  margin: 1vh 1vh 0 0;
   padding: 1vh 1vh;
 }
 
 .dashboardRightTop {
   width: 77.5vw;
-  height: 27vh;
+  height: 28vh;
   background-color: #0e0b16;
   color: #e7dfdd;
-  margin: 0 0vh 1vh 0;
+  margin: 0;
   padding: 1vh 1vh;
 }
 
@@ -42,7 +42,7 @@ html {
   height: 58vh;
   background-color: #0e0b16;
   color: #e7dfdd;
-  margin: 1vh 1vh 1vh 0;
+  margin-top: 1vh;
   padding: 0.5vh 1vh;
 }
 
@@ -86,7 +86,7 @@ html {
   color: #333333;
   padding: 2vh;
   font-size: 1.5em;
-  width: 18vw;
+  width: 14vw;
   margin: 2vh;
   text-align: center;
 }
