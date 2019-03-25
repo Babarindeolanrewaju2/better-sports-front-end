@@ -3,9 +3,10 @@ import React from "react";
 import { connect } from "react-redux";
 
 const DashSidebar = props => {
-  let user = props.user.attributes;
-
-  if (user) {
+  if (props.user === "placeholder") {
+    return <h1> Loading... </h1>;
+  } else {
+    let user = props.user.attributes;
     return (
       <div className="dashSidebar">
         <div className="userName">
@@ -29,8 +30,6 @@ const DashSidebar = props => {
         </div>
       </div>
     );
-  } else {
-    return <h1> Loading... </h1>;
   }
 };
 

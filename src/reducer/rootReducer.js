@@ -4,7 +4,7 @@ const initialState = {
   teams: [],
   players: [],
   selectedPlayer: {},
-  currentUser: {},
+  currentUser: "placeholder",
   betInfo: {}
 };
 
