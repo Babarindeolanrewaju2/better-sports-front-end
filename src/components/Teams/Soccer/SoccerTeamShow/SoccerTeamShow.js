@@ -5,6 +5,7 @@ import { fetchTeamPlayers } from "../../../../actions/soccerTeamsActions";
 
 import TeamDetails from "./TeamDetails";
 import PlayerThumbnail from "./PlayerThumbnail";
+import TeamStadium from "./TeamStadium";
 
 import "../../../../styles/SoccerTeam.css";
 
@@ -31,9 +32,8 @@ class SoccerTeamShow extends Component {
 
   componentDidMount() {
     let teamId = this.props.match.params.id;
-    console.log("ID", teamId);
+
     fetchTeamPlayers(teamId).then(players => {
-      //console.log(players);
       this.setState({ players: players["data"] });
     });
   }
@@ -41,7 +41,7 @@ class SoccerTeamShow extends Component {
   render() {
     let teamId = this.props.match.params.id;
     let team = this.findTeam(teamId);
-    console.log(this.state.players);
+
     if (team === undefined) {
       return (
         <div className="soccerTeamContainer">
@@ -54,13 +54,11 @@ class SoccerTeamShow extends Component {
         </div>
       );
     } else {
-      console.log(team.attributes);
       return (
         <div className="soccerTeamContainer">
           <div className="soccerTeamDetails">
             <TeamDetails team={team} />
           </div>
-          {/* TODO: REFACTOR TEAM DETAILS INTO OWN COMPONENT HERE?*/}
 
           <hr />
 
@@ -77,8 +75,7 @@ class SoccerTeamShow extends Component {
           <hr />
 
           <div className="teamShowStadium">
-            <h2>{team.attributes.home_stadium}</h2>
-            {/* TODO: ADD STADIUM DEETS HERE*/}
+            <TeamStadium team={team} />
           </div>
         </div>
       );

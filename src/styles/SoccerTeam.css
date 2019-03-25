@@ -26,7 +26,7 @@
 }
 
 .teamDetails h1 {
-  font-size: 3em;
+  font-size: 7em;
   padding: 3vh;
 }
 
@@ -117,5 +117,37 @@
   padding-top: 1vh;
 }
 
+/* All Stadium CSS */
 .teamShowStadium {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5vh;
+}
+
+.teamShowStadiumName {
+  /* float: left; */
+  font-size: 3em;
+  padding: 1vh 1vh;
+  text-align: center;
+  color: #e7dfdd;
+}
+
+.teamShowStadiumImage img {
+  float: left;
+  margin: 2vh;
+  max-height: 25vh;
+}
+
+.teamShowStadiumDetails {
+  clear: left;
+  margin: 2vh;
+  font-size: 1.5em;
+  color: #e7dfdd;
+}
+
+.teamShowStadiumDetails span {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: dodgerblue;
 }
