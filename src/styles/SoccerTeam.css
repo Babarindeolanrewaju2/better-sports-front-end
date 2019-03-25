@@ -13,7 +13,9 @@
 }
 
 .soccerTeamDetails {
-  width: 100%;
+  width: 90%;
+  margin: auto;
+  /* background-color: #4717f6; */
 }
 
 .teamBio {
@@ -49,6 +51,7 @@
   margin-left: auto;
   margin-right: auto;
   /* background-color: #000; */
+  /* background-color: #a239ca; */
 }
 
 .teamShowPlayerTeamName {
