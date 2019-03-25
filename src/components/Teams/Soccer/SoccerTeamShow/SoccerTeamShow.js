@@ -10,7 +10,7 @@ import "../../../../styles/SoccerTeam.css";
 
 class SoccerTeamShow extends Component {
   state = {
-    players: {}
+    players: []
   };
 
   findTeam = id => {
@@ -20,9 +20,13 @@ class SoccerTeamShow extends Component {
   };
 
   mapPlayersToPlayerThumb = () => {
-    return this.state.players.map(player => {
-      return <PlayerThumbnail key={player.id} player={player} />;
-    });
+    if (this.state.players.length > 0) {
+      return this.state.players.map(player => {
+        return <PlayerThumbnail key={player.id} player={player} />;
+      });
+    } else {
+      return null;
+    }
   };
 
   componentDidMount() {
@@ -61,9 +65,13 @@ class SoccerTeamShow extends Component {
           <hr />
 
           <div className="teamShowPlayers">
-            <h2>{team.attributes.name} Players:</h2>
-            <br />
-            {this.mapPlayersToPlayerThumb()}
+            <div className="teamShowPlayerTeamName">
+              <h2>{team.attributes.name} Players:</h2>
+            </div>
+
+            <div className="teamShowPlayerPhotos">
+              {this.mapPlayersToPlayerThumb()}
+            </div>
           </div>
 
           <hr />

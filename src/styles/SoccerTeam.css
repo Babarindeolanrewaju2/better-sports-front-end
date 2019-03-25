@@ -41,9 +41,21 @@
 /* All Player Information */
 
 .teamShowPlayers {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.teamShowPlayerTeamName {
+  font-size: 2em;
+  padding: 1vh 1vh;
+  text-align: center;
+  color: #e7dfdd;
+}
+
+.teamShowPlayerPhotos {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
