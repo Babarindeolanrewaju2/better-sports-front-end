@@ -4,6 +4,7 @@ table {
   width: 100%;
   text-align: center;
   border: 2px black solid;
+  font-family: "Varela Round", "Comfortaa", sans-serif;
 }
 
 th {

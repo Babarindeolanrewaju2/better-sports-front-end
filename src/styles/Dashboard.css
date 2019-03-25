@@ -9,6 +9,7 @@ html {
   /* background-color: rgba(14, 11, 22, 0.85); */
   margin-top: 0;
   display: flex;
+  font-family: "Varela Round", "Comfortaa", sans-serif;
 }
 
 .dashboardContainerRight {

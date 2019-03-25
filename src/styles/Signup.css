@@ -6,6 +6,7 @@ body {
   display: flex;
   width: 99vw;
   height: 91vh;
+  font-family: "Varela Round", "Comfortaa", sans-serif;
 }
 
 .signupForm {
@@ -28,6 +29,7 @@ input[type="password"] {
   display: inline-block;
   border: none;
   background: rgba(14, 11, 22, 0.7);
+  font-family: "Varela Round", "Comfortaa", sans-serif;
 }
 
 input[type="text"]:focus,
@@ -52,6 +54,7 @@ hr {
   opacity: 0.8;
   background-color: dodgerblue;
   font-size: 1em;
+  font-family: "Varela Round", "Comfortaa", sans-serif;
 }
 
 .signUpBtn:hover {
@@ -71,6 +74,7 @@ hr {
   width: 100%;
   opacity: 0.8;
   font-size: 1em;
+  font-family: "Varela Round", "Comfortaa", sans-serif;
 }
 
 .cancelSignup:hover {
