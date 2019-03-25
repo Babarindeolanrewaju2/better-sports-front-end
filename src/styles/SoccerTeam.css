@@ -5,7 +5,10 @@
   background-color: rgba(14, 11, 22, 0.85);
 }
 
-.soccerTeamWait {
+.soccerTeamWait img {
+  width: 25vw;
+  height: auto;
+  margin: 30vh 30vw;
 }
 
 .soccerTeamDetails {
@@ -44,6 +47,7 @@
   width: 90%;
   margin-left: auto;
   margin-right: auto;
+  /* background-color: #000; */
 }
 
 .teamShowPlayerTeamName {

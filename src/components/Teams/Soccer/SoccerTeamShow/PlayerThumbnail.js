@@ -14,7 +14,13 @@ const PlayerThumbnail = props => {
     <div className="playerCard" onClick={handleClick}>
       <div className="player-card-inner">
         <div className="player-card-front">
-          <img src={player.profile_image} alt="Player Card" />
+          <img
+            src={
+              player.profile_image ||
+              "http://clipart-library.com/images/BcaKKaXLi.png"
+            }
+            alt="Player Card"
+          />
         </div>
         <div className="player-card-back">
           <h1>{player.full_name}</h1>
