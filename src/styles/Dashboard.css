@@ -74,3 +74,24 @@ html {
 .userBalance {
   font-size: 1.8em;
 }
+
+.userLinks {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidbarLink {
+  text-decoration: none;
+  background-color: #eeeeee;
+  color: #333333;
+  padding: 2vh;
+  font-size: 1.5em;
+  width: 18vw;
+  margin: 2vh;
+  text-align: center;
+}
+
+.sidbarLink:hover {
+  background-color: #4717f6;
+  color: #e7dfdd;
+}

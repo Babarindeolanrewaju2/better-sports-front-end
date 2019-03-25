@@ -1,6 +1,7 @@
 import React from "react";
 
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 const DashSidebar = props => {
   if (props.user === "placeholder") {
@@ -21,12 +22,17 @@ const DashSidebar = props => {
           </h3>
         </div>
         <div className="userLinks">
-          <a href="/addFunds">
-            <h4>Add money to account</h4>
-          </a>
-          <h4>Friends</h4>
-          <h4>Teams</h4>
-          <h4>My Bets</h4>
+          <Link className="sidbarLink" to="/teams/soccer">
+            All teams
+          </Link>
+
+          <Link className="sidbarLink" to="/addFunds">
+            Add funds
+          </Link>
+
+          <Link className="sidbarLink" to="/bets">
+            My bets
+          </Link>
         </div>
       </div>
     );
