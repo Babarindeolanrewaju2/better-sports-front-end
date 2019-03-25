@@ -37,15 +37,17 @@ table {
 button {
   border-radius: 15px;
   padding: 10px;
-  font-weight: bold;
-  background-color: #4caf50;
-  opacity: 0.9;
+  background-color: dodgerblue;
+  opacity: 0.8;
+  font-family: "Varela Round", "Comfortaa", sans-serif;
+  font-size: 0.8em;
+  color: white;
 }
 
 button:focus,
 button:hover {
-  background-color: #25ec00;
-  color: White;
+  background-color: dodgerblue;
+  opacity: 1;
 }
 
 h1 {

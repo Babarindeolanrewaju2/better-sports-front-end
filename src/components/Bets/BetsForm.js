@@ -57,71 +57,85 @@ class BetsForm extends Component {
                 on.
               </p>
               <hr />
-              <h3>Home team: {this.state.betInfo.meta.homeTeam.name}</h3>
-              <h3>Away team: {this.state.betInfo.meta.awayTeam.name}</h3>
-              <h4>Select a wager:</h4>
-              <button type="button" value="50" onClick={this.setAmount}>
-                $50
-              </button>
-              <button type="button" value="100" onClick={this.setAmount}>
-                $100
-              </button>
-              <button type="button" value="250" onClick={this.setAmount}>
-                $250
-              </button>
-              <button type="button" value="500" onClick={this.setAmount}>
-                $500
-              </button>
-              <label>$</label>
-              <input
-                type="text"
-                placeholder="Enter Amount"
-                onChange={this.setAmount}
-              />
-              <br />
-              <h4>Select a outcome:</h4>
-              <button
-                type="button"
-                name="Home Win"
-                value="one"
-                onClick={this.chooseWinner}
-              >
-                {this.state.betInfo.meta.homeTeam.name} win
-              </button>
-              <button
-                type="button"
-                name="Draw"
-                value="draw"
-                onClick={this.chooseWinner}
-              >
-                Draw
-              </button>
-              <button
-                type="button"
-                name="Away Win"
-                value="two"
-                onClick={this.chooseWinner}
-              >
-                {this.state.betInfo.meta.awayTeam.name} win
-              </button>
-              <button
-                type="button"
-                name="Home Win or Draw"
-                value="oneDraw"
-                onClick={this.chooseWinner}
-              >
-                {this.state.betInfo.meta.homeTeam.name} Win or Draw
-              </button>
-              <button
-                type="button"
-                name="Away Win or Draw"
-                value="twoDraw"
-                onClick={this.chooseWinner}
-              >
-                {this.state.betInfo.meta.awayTeam.name} Win or Draw
-              </button>
-              <br />
-              <br />
+              <h3>
+                {" "}
+                <span>Home team:</span> {this.state.betInfo.meta.homeTeam.name}
+              </h3>
+              <h3>
+                {" "}
+                <span>Away team:</span> {this.state.betInfo.meta.awayTeam.name}
+              </h3>
+              <div className="betWager">
+                <h4>Select a wager:</h4>
+                <div className="betWagerBtn">
+                  <button type="button" value="50" onClick={this.setAmount}>
+                    $50
+                  </button>
+                  <button type="button" value="100" onClick={this.setAmount}>
+                    $100
+                  </button>
+                  <button type="button" value="250" onClick={this.setAmount}>
+                    $250
+                  </button>
+                  <button type="button" value="500" onClick={this.setAmount}>
+                    $500
+                  </button>
+                  <input
+                    type="text"
+                    placeholder="Enter Amount $"
+                    onChange={this.setAmount}
+                  />
+                </div>
+              </div>
+
+              <div className="betOutcome">
+                <h4>Select a outcome:</h4>
+                <div className="betOutcomeBtn">
+                  <button
+                    type="button"
+                    name="Home Win"
+                    value="one"
+                    onClick={this.chooseWinner}
+                  >
+                    {this.state.betInfo.meta.homeTeam.name} win
+                  </button>
+
+                  <button
+                    type="button"
+                    name="Away Win"
+                    value="two"
+                    onClick={this.chooseWinner}
+                  >
+                    {this.state.betInfo.meta.awayTeam.name} win
+                  </button>
+                  <button
+                    type="button"
+                    name="Draw"
+                    value="draw"
+                    onClick={this.chooseWinner}
+                  >
+                    Draw
+                  </button>
+
+                  <button
+                    type="button"
+                    name="Home Win or Draw"
+                    value="oneDraw"
+                    onClick={this.chooseWinner}
+                  >
+                    {this.state.betInfo.meta.homeTeam.name} Win or Draw
+                  </button>
+                  <button
+                    type="button"
+                    name="Away Win or Draw"
+                    value="twoDraw"
+                    onClick={this.chooseWinner}
+                  >
+                    {this.state.betInfo.meta.awayTeam.name} Win or Draw
+                  </button>
+                </div>
+              </div>
+
               <div className="finalBet">
                 <h3>Your prediction:</h3>
                 <div className="prediciton">

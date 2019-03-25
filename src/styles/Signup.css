@@ -38,9 +38,9 @@ input[type="password"]:focus {
   outline: none;
 }
 
-hr {
-  border: 1px solid #a239ca;
-  margin-bottom: 0.5vh;
+.signupForm hr {
+  border: 1px solid dodgerblue;
+  margin-bottom: 2vh;
 }
 
 /* Set a style for all buttons */

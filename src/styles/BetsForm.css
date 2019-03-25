@@ -2,53 +2,111 @@
   display: flex;
   width: 99vw;
   height: 88vh;
-  background-color: #ccc;
   font-family: "Varela Round", "Comfortaa", sans-serif;
 }
 
 .betsFormForm {
-  background-color: white;
+  background-color: #0e0b16;
+  color: white;
   width: 40vw;
-  height: 65vh;
+  /* height: 65vh; */
   padding: 1vh 1vw;
-  margin-top: 11.5vh;
+  margin-top: 5vh;
   margin-left: auto;
   margin-right: auto;
+  font-size: 1.2em;
+}
+
+.betsFormForm hr {
+  border: 1px solid dodgerblue;
+  margin-bottom: 2vh;
+}
+
+.betsFormForm span {
+  color: #a234ca;
+}
+
+.betsFormForm h3 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.betsFormForm h4 {
+  margin: 1.8vh 0;
+  font-size: 1.2em;
+}
+
+.betWagerBtn {
+  width: 39vw;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.betWagerBtn button {
+  width: 6vw;
+  margin: 0.5vh auto;
+  background: #2ecc40;
+  color: #0e0b16;
+  font-size: 1em;
+}
+
+.betWagerBtn button:hover {
+  opacity: 1;
+  color: white;
 }
 
 /* Full-width input fields */
-.betsFormForm input[type="text"] {
-  width: 20%;
-  padding: 15px;
+.betWagerBtn input[type="text"] {
+  width: 7vw;
+  padding: 1vh;
   margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
+  background: #0e0b16;
+  color: white;
+  font-size: 0.75em;
+  border: 1px white solid;
 }
 
-input[type="text"]:focus {
+.betWagerBtn input[type="text"]:focus {
   background-color: #ddd;
+  font-size: 1em;
   outline: none;
 }
 
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 0.5vh;
+.betOutcomeBtn {
+  width: 38vw;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 0.9;
+}
+
+.betOutcomeBtn button {
+  width: 15vw;
+  margin: 0.5vh auto;
+  background: #2ecc40;
+  color: #0e0b16;
+  font-size: 1em;
+}
+
+.betOutcomeBtn button:hover {
+  opacity: 1;
+  color: white;
 }
 
 /* Set a style for all buttons */
 .signupbtn {
-  background-color: #4caf50;
+  background-color: dodgerblue;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
   width: 100%;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
-button:hover {
+.signupbtn:hover {
   opacity: 1;
 }
 
@@ -62,7 +120,12 @@ button:hover {
   border: none;
   cursor: pointer;
   width: 100%;
-  opacity: 0.9;
+  opacity: 0.8;
+}
+
+.cancelbtn:hover {
+  background-color: #f44336;
+  opacity: 1;
 }
 
 /* Float cancel and signup buttons and add an equal width */
@@ -70,6 +133,9 @@ button:hover {
 .signupbtn {
   float: left;
   width: 49%;
+}
+.betsFormForm p {
+  font-size: 0.5em;
 }
 
 /* Clear floats */
