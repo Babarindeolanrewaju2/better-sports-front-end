@@ -4,8 +4,6 @@ const TeamStadium = props => {
   // grab team attributes from props
   let team = props.team.attributes;
 
-  console.log(team);
-
   return (
     <Fragment>
       <div className="teamShowStadiumHeader">
@@ -30,6 +28,7 @@ const TeamStadium = props => {
           <img
             src={
               team.team_jersey ||
+              team.stadium_thumbnail ||
               "http://localhost:3000/images/standard_stadium.jpg"
             }
             alt="Stadium"
