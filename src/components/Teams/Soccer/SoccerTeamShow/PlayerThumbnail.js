@@ -8,6 +8,7 @@ const PlayerThumbnail = props => {
   const handleClick = () => {
     //props.routerProps.history.push(`/teams/soccer/${team.id}`);
     console.log("player clicked");
+    console.log(props);
   };
 
   return (

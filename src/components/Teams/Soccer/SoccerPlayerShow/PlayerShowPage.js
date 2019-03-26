@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { fetchTeamPlayers } from "../../../../actions/soccerTeamsActions";
+import { fetchPlayerInfo } from "../../../../actions/soccerTeamsActions";
 
 import "../../../../styles/SoccerTeam.css";
 
@@ -18,9 +18,7 @@ class PlayerShowPage extends Component {
   }
 
   render() {
-    let teamId = this.props.match.params.id;
-    let team = this.findTeam(teamId);
-
+    console.log(this.state.player);
     return null;
   }
 }

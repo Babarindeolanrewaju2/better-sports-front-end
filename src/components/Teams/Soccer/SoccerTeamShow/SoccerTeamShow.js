@@ -23,7 +23,9 @@ class SoccerTeamShow extends Component {
   mapPlayersToPlayerThumb = () => {
     if (this.state.players.length > 0) {
       return this.state.players.map(player => {
-        return <PlayerThumbnail key={player.id} player={player} />;
+        return (
+          <PlayerThumbnail key={player.id} player={player} {...this.props} />
+        );
       });
     } else {
       return null;
@@ -41,7 +43,7 @@ class SoccerTeamShow extends Component {
   render() {
     let teamId = this.props.match.params.id;
     let team = this.findTeam(teamId);
-
+    console.log(this.props);
     if (team === undefined) {
       return (
         <div className="soccerTeamContainer">
