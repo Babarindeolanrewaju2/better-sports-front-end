@@ -6,9 +6,7 @@ const PlayerThumbnail = props => {
 
   // on user click, push to that team's show page based on team id
   const handleClick = () => {
-    //props.routerProps.history.push(`/teams/soccer/${team.id}`);
-    console.log("player clicked");
-    console.log(props);
+    props.history.push(`/teams/soccer/players/${props.player.id}`);
   };
 
   return (

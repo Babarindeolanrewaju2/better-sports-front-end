@@ -34,7 +34,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.currentUser);
     return (
       <Fragment>
         <Route

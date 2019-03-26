@@ -13,6 +13,7 @@ class PlayerShowPage extends Component {
     let playerId = this.props.match.params.id;
 
     fetchPlayerInfo(playerId).then(player => {
+      console.log(player);
       this.setState({ player: player["data"] });
     });
   }
