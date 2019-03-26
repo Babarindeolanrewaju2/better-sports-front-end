@@ -29,16 +29,15 @@
   margin: 1vh auto;
   padding: 1vh;
   width: 12vw;
-  height: 15vh;
+  height: 12vw;
   background-color: black;
   /* background-color: transparent; */
-  border: 2px solid dodgerblue;
+  border: 2px solid #4717f6;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
 .soccerTeamCard img {
-  width: 12vw;
-  height: 15vh;
+  height: 12vw;
 }
 
 /* This container is needed to position the front and back side */
@@ -73,7 +72,7 @@
 
 /* Style the back side */
 .soccer-card-back {
-  background-color: dodgerblue;
+  background-color: #4717f6;
   color: white;
   transform: rotateY(180deg);
 }

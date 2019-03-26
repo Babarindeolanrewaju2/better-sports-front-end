@@ -77,10 +77,6 @@
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
-.playerCard img {
-  max-height: 23.5vh;
-}
-
 .player-card-inner {
   position: relative;
   width: 100%;
@@ -106,6 +102,11 @@
 .player-card-front {
   background-color: #000;
   color: black;
+}
+
+.player-card-front img {
+  object-fit: scale-down;
+  height: 23.5vh;
 }
 
 .player-card-back {
