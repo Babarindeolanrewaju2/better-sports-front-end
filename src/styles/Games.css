@@ -1,5 +1,10 @@
 /* Available Games to bet on CSS */
 
+.gamesList {
+  width: 95%;
+  margin: auto;
+}
+
 table {
   width: 100%;
   text-align: center;
