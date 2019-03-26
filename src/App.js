@@ -16,6 +16,7 @@ import CreateBets from "./containers/CreateBets";
 import AllBets from "./containers/AllBets";
 import TeamsPage from "./containers/TeamsPage";
 import SoccerShowPage from "./containers/SoccerShowPage";
+import PlayerShowPage from "./containers/PlayerShowPage";
 
 class App extends Component {
   // check to see if user already has a JWT stored on browser,
@@ -85,6 +86,11 @@ class App extends Component {
         <Route exact path="/bets" component={AllBets} />
         <Route exact path="/teams/soccer" component={TeamsPage} />
         <Route exact path="/teams/soccer/:id" component={SoccerShowPage} />
+        <Route
+          exact
+          path="/teams/soccer/players/:id"
+          component={PlayerShowPage}
+        />
       </Fragment>
     );
   }
