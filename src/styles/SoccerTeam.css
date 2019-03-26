@@ -2,7 +2,6 @@
   margin-top: 0;
   width: 99vw;
   min-height: 91vh;
-  background-color: rgba(14, 11, 22, 0.85);
   font-family: "Varela Round", "Comfortaa", sans-serif;
 }
 
@@ -50,8 +49,6 @@
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  /* background-color: #000; */
-  /* background-color: #a239ca; */
 }
 
 .teamShowPlayerTeamName {
@@ -75,12 +72,11 @@
   height: 23.5vh;
   background-color: black;
   /* background-color: transparent; */
-  border: 2px solid dodgerblue;
+  border: 2px solid #4717f6;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
 .playerCard img {
-  /* max-width: 15vw; */
   max-height: 23.5vh;
 }
 
@@ -112,7 +108,7 @@
 }
 
 .player-card-back {
-  background-color: dodgerblue;
+  background-color: #4717f6;
   color: white;
   transform: rotateY(180deg);
 }
@@ -157,5 +153,5 @@
 .teamShowStadiumDetails span {
   font-weight: bold;
   font-size: 1.2em;
-  color: dodgerblue;
+  color: #4717f6;
 }
