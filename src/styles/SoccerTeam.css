@@ -149,14 +149,10 @@
   margin: 2vh;
   font-size: 1.5em;
   color: #e7dfdd;
-}
-
-.teamShowStadiumDetails {
   text-align: justify;
 }
 
 .teamShowStadiumDetails span {
   font-weight: bold;
   font-size: 1.2em;
-  color: #4717f6;
 }
