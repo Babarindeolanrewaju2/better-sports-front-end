@@ -1,0 +1,67 @@
+.playerShowContainer {
+  margin-top: 0;
+  width: 99vw;
+  min-height: 91vh;
+  font-family: "Varela Round", "Comfortaa", sans-serif;
+  color: #e7dfdd;
+}
+
+.playerInnerContainer {
+  width: 90%;
+  margin: auto;
+}
+
+.playerPrimaryImageAndInfo {
+  display: flex;
+}
+
+.playerShowImage {
+  background-color: black;
+  border: 2px solid #4717f6;
+  margin-top: 3vh;
+}
+
+.playerShowImage img {
+  height: 30vh;
+  padding: 1vh;
+}
+
+.playerShowPrimaryInfo h1 {
+  font-size: 7em;
+  padding: 3vh;
+}
+
+.playerShowPrimaryInfo h3 {
+  font-size: 2em;
+  margin: 0;
+  padding: 0.5vh 3vh;
+}
+
+.playerShowDescription {
+  margin-top: 2vh;
+  padding: 1vh;
+}
+
+.playerShowDescription h2 {
+  font-size: 2.3em;
+  margin-top: 0;
+  margin-bottom: 0.5vh;
+}
+
+.playerShowDescription h4 {
+  font-size: 1.5em;
+  margin: 0.5vh;
+  padding-left: 1vw;
+}
+
+.playerShowDescription h4:last-of-type {
+  margin-bottom: 2vh;
+}
+
+.playerShowDescription p {
+  font-size: 1.5em;
+  line-height: 1.4em;
+  margin: 0.5vh;
+  padding-left: 1vw;
+  text-align: justify;
+}
