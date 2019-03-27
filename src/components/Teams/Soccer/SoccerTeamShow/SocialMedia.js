@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
 
 const SocialMedia = props => {
   // grab team attributes from props
@@ -11,6 +10,7 @@ const SocialMedia = props => {
         {team.website && (
           <li className="socialLink">
             <a
+              rel="noopener noreferrer"
               target="_blank"
               href={
                 team.website.includes("www")
@@ -26,6 +26,7 @@ const SocialMedia = props => {
         {team.facebook && (
           <li className="socialLink">
             <a
+              rel="noopener noreferrer"
               target="_blank"
               href={
                 team.facebook.includes("www")
@@ -41,6 +42,7 @@ const SocialMedia = props => {
         {team.instagram && (
           <li className="socialLink">
             <a
+              rel="noopener noreferrer"
               target="_blank"
               href={
                 team.instagram.includes("www")
@@ -56,6 +58,7 @@ const SocialMedia = props => {
         {team.twitter && (
           <li className="socialLink">
             <a
+              rel="noopener noreferrer"
               target="_blank"
               href={
                 team.twitter.includes("www")

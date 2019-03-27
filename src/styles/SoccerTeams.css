@@ -20,13 +20,10 @@
 }
 
 .soccerTeamsCards {
-  width: 90%;
-  margin: auto;
-}
-
-.soccerTeamsCards {
   display: inline-flex;
   flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
 }
 
 .soccerTeamCard {
