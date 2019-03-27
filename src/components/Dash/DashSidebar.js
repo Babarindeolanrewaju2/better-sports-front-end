@@ -4,9 +4,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 const DashSidebar = props => {
-  console.log(props.user);
-
-  if (props.user && props.user.attributes) {
+  if (props.user.attributes) {
     let user = props.user.attributes;
     return (
       <div className="dashSidebar">
