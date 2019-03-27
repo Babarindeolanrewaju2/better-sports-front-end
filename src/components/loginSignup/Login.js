@@ -20,7 +20,8 @@ const Login = props => {
 
     // clear form of current data
     document.getElementById("login").reset();
-    props.history.push("/teams/soccer");
+    //props.history.push("/teams/soccer");
+    props.history.push("/dashboard");
   }
 
   // display form HTML

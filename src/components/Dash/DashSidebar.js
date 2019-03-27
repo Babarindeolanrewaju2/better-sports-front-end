@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
 const DashSidebar = props => {
-  if (props.user === "placeholder") {
-    return <h1> Loading... </h1>;
-  } else {
+  console.log(props.user);
+
+  if (props.user && props.user.attributes) {
     let user = props.user.attributes;
     return (
       <div className="dashSidebar">
@@ -36,15 +36,17 @@ const DashSidebar = props => {
         </div>
       </div>
     );
+  } else {
+    return <h1> Loading... </h1>;
   }
 };
 
 function mapStateToProps(state) {
   return {
-    currentUser: state.currentUser
+    user: state.currentUser
   };
 }
 
 export default connect(mapStateToProps)(DashSidebar);
 
-//
+// export default DashSidebar;

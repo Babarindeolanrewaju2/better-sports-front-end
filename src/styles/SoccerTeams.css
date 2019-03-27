@@ -4,7 +4,6 @@
   margin-top: 0;
   width: 99vw;
   min-height: 91vh;
-  background-color: rgba(14, 11, 22, 0.85);
   font-family: "Varela Round", "Comfortaa", sans-serif;
 }
 
@@ -31,13 +30,12 @@
   width: 12vw;
   height: 12vw;
   background-color: black;
-  /* background-color: transparent; */
   border: 2px solid #4717f6;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
 .soccerTeamCard img {
-  height: 12vw;
+  max-height: 12vw;
 }
 
 /* This container is needed to position the front and back side */

@@ -15,14 +15,14 @@ const Dashboard = props => {
       <Navbar />
       <div className="dashboardContainer">
         <div className="dashboardLeft">
-          <DashSidebar user={props.user} />
+          <DashSidebar />
         </div>
         <div className="dashboardContainerRight">
           <div className="dashboardRightTop">
             <DashGames games={props.games} {...props} />
           </div>
           <div className="dashboardRightBottom">
-            <DashBets user={props.user} />
+            {props.user ? <DashBets user={props.user} /> : null}
           </div>
         </div>
       </div>
@@ -37,3 +37,6 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(Dashboard);
+
+// user={props.user}
+//

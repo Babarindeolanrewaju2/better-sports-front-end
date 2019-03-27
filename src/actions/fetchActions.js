@@ -47,6 +47,7 @@ export function login(dispatch, email, pwd, callback) {
         }
       } else {
         localStorage.setItem("token", user.token);
+        console.log("LOOK HERE", user);
         dispatch({
           type: "CURRENT_USER",
           payload: user["user"]["data"]
