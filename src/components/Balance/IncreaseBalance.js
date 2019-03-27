@@ -57,18 +57,18 @@ class IncreaseBalance extends Component {
     // if there is a user logged in, then render the apporopriate HTML
     if (this.props.user) {
       return (
-        // container to hold all HTML
+        /* container to hold all HTML */
         <div className="addFundsContainer">
           // div to hold the form to change amount value
           <div className="addFundsForm">
-            // description of what to do with this form
+            {/* description of what to do with this form */}
             <h1>{this.props.user.first_name}, add funds to your account:</h1>
             <h3>
               Select an amount below to debit funds from your bank and add to
               your Better Sports account.
             </h3>
             <form id="addFunds" onSubmit={this.handleSubmit}>
-              // button to add $50 to account
+              {/* button to add $50 to account */}
               <button
                 type="button"
                 value="50"
@@ -77,7 +77,7 @@ class IncreaseBalance extends Component {
               >
                 $50
               </button>
-              // button to add $100 to account
+              {/* button to add $100 to account */}
               <button
                 type="button"
                 value="100"
@@ -86,7 +86,7 @@ class IncreaseBalance extends Component {
               >
                 $100
               </button>
-              // button to add $250 to account
+              {/* button to add $250 to account */}
               <button
                 type="button"
                 value="250"
@@ -95,7 +95,7 @@ class IncreaseBalance extends Component {
               >
                 $250
               </button>
-              // button to add $500 to account
+              {/* button to add $500 to account */}
               <button
                 type="button"
                 value="500"
@@ -104,7 +104,7 @@ class IncreaseBalance extends Component {
               >
                 $500
               </button>
-              // input to add any amount user selects to account
+              {/* input to add any amount user selects to account */}
               <label>$</label>
               <input
                 type="text"
@@ -113,8 +113,8 @@ class IncreaseBalance extends Component {
                 onChange={this.handleAmountChange}
               />
               <br />
-              // submit button that dynamically renders account amount to
-              //increase their account
+              {/* submit button that dynamically renders account amount to */}
+              {/*increase their account */}
               <input
                 type="submit"
                 value={`Add $${this.state.amount} to account`}
