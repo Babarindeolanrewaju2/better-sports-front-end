@@ -18,7 +18,7 @@ const SocialMedia = props => {
                   : "//www." + team.website
               }
             >
-              <i class="far fa-sticky-note" />
+              <i class="fas fa-globe-americas" />
             </a>
           </li>
         )}
