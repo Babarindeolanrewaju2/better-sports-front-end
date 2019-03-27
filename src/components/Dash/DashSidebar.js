@@ -20,15 +20,15 @@ const DashSidebar = props => {
           </h3>
         </div>
         <div className="userLinks">
-          <Link className="sidbarLink" to="/teams/soccer">
+          <Link className="sidebarLink" to="/teams/soccer">
             All teams
           </Link>
 
-          <Link className="sidbarLink" to="/addFunds">
+          <Link className="sidebarLink" to="/addFunds">
             Add funds
           </Link>
 
-          <Link className="sidbarLink" to="/bets">
+          <Link className="sidebarLink" to="/bets">
             My bets
           </Link>
         </div>
