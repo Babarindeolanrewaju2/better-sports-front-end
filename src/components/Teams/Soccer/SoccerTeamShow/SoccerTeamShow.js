@@ -6,6 +6,7 @@ import { fetchTeamPlayers } from "../../../../actions/soccerTeamsActions";
 import TeamDetails from "./TeamDetails";
 import PlayerThumbnail from "./PlayerThumbnail";
 import TeamStadium from "./TeamStadium";
+import SocialMedia from "./SocialMedia";
 
 import "../../../../styles/SoccerTeam.css";
 
@@ -43,7 +44,7 @@ class SoccerTeamShow extends Component {
   render() {
     let teamId = this.props.match.params.id;
     let team = this.findTeam(teamId);
-
+    console.log(team);
     if (team === undefined) {
       return (
         <div className="soccerTeamContainer">
@@ -58,6 +59,10 @@ class SoccerTeamShow extends Component {
     } else {
       return (
         <div className="soccerTeamContainer">
+          <div className="socialMedia">
+            <SocialMedia team={team} />
+          </div>
+
           <div className="soccerTeamDetails">
             <TeamDetails team={team} />
           </div>

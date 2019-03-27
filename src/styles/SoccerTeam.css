@@ -157,3 +157,31 @@
   font-weight: bold;
   font-size: 1.2em;
 }
+
+/* Social Media CSS */
+
+.socialMedia {
+  position: fixed;
+  top: 8vh; /* Position the navbar at the top of the page */
+  right: 0;
+  margin: 0.5vw;
+}
+
+li {
+  list-style: none;
+  font-size: 50px;
+  padding: 20px 20px;
+}
+
+a:link {
+  color: #fff;
+}
+
+/* visited link */
+a:visited {
+  color: #fff;
+}
+
+a:hover {
+  color: #4717f6;
+}
