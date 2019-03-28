@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 
+// connect to Redux state
 import { connect } from "react-redux";
 
 // the bet card creates the table rows for a user's bets

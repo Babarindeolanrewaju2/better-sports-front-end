@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 
+// import the 'place a bet' button to be used by table
 import BetButton from "./BetButton";
 
 const Match = props => {

@@ -1,5 +1,6 @@
 import React from "react";
 
+// connect to Redux state
 import { connect } from "react-redux";
 
 // react router links used on the left sidebar of the dashboard

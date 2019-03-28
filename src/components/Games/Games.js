@@ -1,8 +1,12 @@
 import React, { Component, Fragment } from "react";
 
+// connect to Redux state
 import { connect } from "react-redux";
+
+// import function to get all games from the API
 import { fetchGames } from "../../actions/fetchActions";
 
+// this component returns table rows with all of the game/match information
 import Match from "./Match";
 
 import "../../styles/Games.css";

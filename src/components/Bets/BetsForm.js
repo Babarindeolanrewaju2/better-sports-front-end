@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+// connect to Redux state
 import { connect } from "react-redux";
 
 // import the function to allow a user to make a new bet

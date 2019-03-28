@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 
+// connect to Redux state
 import { connect } from "react-redux";
 import { fetchGames } from "../../../actions/fetchActions";
 
