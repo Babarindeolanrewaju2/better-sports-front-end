@@ -8,9 +8,12 @@ const DashGames = props => {
 
   return (
     <Fragment>
+      {/* have a link btn that allows users to click through to see all
+        of their bets */}
       <a href="/games" className="button" role="button">
         See all games
       </a>
+      {/* Pass routerProps and limited games to the component */}
       <Games {...props} games={limitGames} />
     </Fragment>
   );
