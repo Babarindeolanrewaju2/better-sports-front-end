@@ -57,9 +57,8 @@ class IncreaseBalance extends Component {
     // if there is a user logged in, then render the apporopriate HTML
     if (this.props.user) {
       return (
-        /* container to hold all HTML */
         <div className="addFundsContainer">
-          // div to hold the form to change amount value
+          {/* div to hold the form to change amount value */}
           <div className="addFundsForm">
             {/* description of what to do with this form */}
             <h1>{this.props.user.first_name}, add funds to your account:</h1>
