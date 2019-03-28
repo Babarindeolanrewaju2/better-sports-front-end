@@ -1,8 +1,13 @@
+// fetch all team information from the API
 const TEAMS_API = "http://localhost:8000/api/v1/teams";
+// fetch to the teams controller and request players for a team
+// based on the route id
 const TEAM_PLAYERS = "http://localhost:8000/api/v1/team_players";
+// get an individual players information based on their id
 const PLAYER = "http://localhost:8000/api/v1/players/";
 
 // fetches all soccer teams from API and updates Redux state to include them
+// used in Teams/Soccer/SoccerTeamsIndex
 export function fetchTeams(dispatch) {
   return fetch(TEAMS_API)
     .then(res => res.json())

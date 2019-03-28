@@ -1,9 +1,14 @@
+// route to verify the the users token in localStorage and auto sign them in
 const AUTO_LOGIN = "http://localhost:8000/api/v1/auto_login";
+// route to create new account
 const CREATE_ACCT = "http://localhost:8000/api/v1/signup";
+// route to fetch all games that can currently be bet on
 const GAMES_API = "http://localhost:8000/api/v1/games";
+// route to login user, and return a token from the back end
 const LOGIN_USER = "http://localhost:8000/api/v1/login";
 
 // fetches all games from API and updates state to include them
+// this function is used in App.js
 export function fetchGames(dispatch) {
   return fetch(GAMES_API)
     .then(res => res.json())
@@ -24,6 +29,7 @@ export function fetchGames(dispatch) {
 
 // allows user to login with email and password and returns
 // user object and token to store in state/browser
+// Used in LoginSignup/Login component
 export function login(dispatch, email, pwd, callback) {
   console.log("callback", callback);
   return fetch(LOGIN_USER, {
@@ -58,6 +64,7 @@ export function login(dispatch, email, pwd, callback) {
 
 // allows a new user to sign up for an account and returns
 // user object and token to store in state/browser
+// Used in LoginSignup/Signup component
 export function signup(dispatch, firstname, lastname, email, pwd) {
   return fetch(CREATE_ACCT, {
     method: "POST",
@@ -87,6 +94,8 @@ export function signup(dispatch, firstname, lastname, email, pwd) {
     });
 }
 
+// auto logs in a user that has a token in localStorage
+// this function is used in App.js
 export function auto_login(dispatch, token) {
   return fetch(AUTO_LOGIN, {
     method: "GET",
@@ -101,11 +110,3 @@ export function auto_login(dispatch, token) {
       dispatch({ type: "CURRENT_USER", payload: user["data"] });
     });
 }
-
-// export function fetchTeams(dispatch) {
-//   return fetch(TEAMS_API)
-//     .then(res => res.json())
-//     .then(teams => {
-//       return dispatch({ type: "UPDATE_TEAMS", payload: teams["data"] });
-//     });
-// }
