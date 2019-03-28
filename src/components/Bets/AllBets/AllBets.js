@@ -2,31 +2,39 @@ import React, { Component, Fragment } from "react";
 
 import { connect } from "react-redux";
 import { fetchGames } from "../../../actions/fetchActions";
+
+// each seperate bet is returned as a row for a table
 import AllBetsCards from "./AllBetsCards";
 
+// styling
 import "../../../styles/Games.css";
 
 class MyBets extends Component {
-  //const bets = this.props.bets;
-
+  // find the game that the bet is made on so that each bet will be able to display
+  // game information
   findGameObject = id => {
     return this.props.games.find(game => {
       return parseInt(game.id) === id;
     });
   };
+
   // create all bet rows for the table to be displayed
   mapBetInfoToBetCard = () => {
     return this.props.bets.bets.map(bet => {
+      // find the game
       let game = this.findGameObject(bet.game_id);
+      // create all rows for the table based on the number of bets a person has made
       return <AllBetsCards key={bet.id} bet={bet} game={game} />;
     });
   };
 
+  // get all games from the API
   componentDidMount() {
     this.props.getGames();
   }
 
   render() {
+    // if the user has a bets prop
     if (this.props.bets) {
       return (
         <div className="gamesContainer">
@@ -68,6 +76,7 @@ function mapStateToProps(state) {
   };
 }
 
+// get an updated vesion of all games, called in componentDidMount
 function mapDispatchToProps(dispatch) {
   return {
     getGames: () => fetchGames(dispatch)

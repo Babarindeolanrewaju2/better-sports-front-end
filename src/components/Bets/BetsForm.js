@@ -1,22 +1,34 @@
 import React, { Component } from "react";
 
 import { connect } from "react-redux";
+
+// import the function to allow a user to make a new bet
 import { makeBet } from "../../actions/betActions";
 
+// styling
 import "../../styles/BetsForm.css";
 
 class BetsForm extends Component {
   state = {
+    // make all bet info available in state
     betInfo: this.props.betInfo,
+    // wager amount is initialized to $0
     amount: 0,
+    // when a user selects a winner it will be stored in state,
+    // this will allow users to change their mind, if they need to, and only their
+    // final decision stored in local state will be POSTed when they submit
     winner: "",
+    // odds for their selected bet type will be stored to be used in the
+    // POST when a user submits their final bet
     odds: ""
   };
 
+  // changes the wager amount in state
   setAmount = event => {
     this.setState({ ...this.state, amount: event.target.value });
   };
 
+  // changes the winner AND odds values in state
   chooseWinner = event => {
     this.setState({
       ...this.state,
@@ -25,10 +37,14 @@ class BetsForm extends Component {
     });
   };
 
+  // do the math the calculate the potential value of a win
+  // IF a user selects the winning outcome
   calculatePotentialWin = () => {
     return this.state.amount * parseFloat(this.state.odds);
   };
 
+  // upon submit grab the values in state (amount, odds, winner, game id )
+  // grab token to verify approved user in the back end
   handleSubmit = event => {
     event.preventDefault();
     let amount = this.state.amount;
@@ -37,6 +53,8 @@ class BetsForm extends Component {
     let token = localStorage.getItem("token");
     let game = this.props.betInfo.id;
 
+    // verify that user has selected values for all items required to make
+    // a bet -- otherwise alert error message
     if (amount && odds && betType) {
       this.props.newBet(token, amount, odds, game, betType);
       this.props.history.push("/dashboard");
@@ -46,25 +64,29 @@ class BetsForm extends Component {
   };
 
   render() {
+    // when bet info is available, display a betting form
     if (this.props.betInfo !== {}) {
       return (
         <div className="betsFormContainer">
           <div className="betsFormForm">
             <form onSubmit={this.handleSubmit}>
               <h1>Make A Bet</h1>
+              {/* Instructions for user */}
               <p>
                 Please select your wager amount and the outcome you are betting
                 on.
               </p>
               <hr />
+
               <h3>
-                {" "}
+                {/* Home team name */}
                 <span>Home team:</span> {this.state.betInfo.meta.homeTeam.name}
               </h3>
               <h3>
-                {" "}
+                {/* Away team name */}
                 <span>Away team:</span> {this.state.betInfo.meta.awayTeam.name}
               </h3>
+              {/* Home here the user will select the value of their wager */}
               <div className="betWager">
                 <h4>Select a wager:</h4>
                 <div className="betWagerBtn">
@@ -88,6 +110,7 @@ class BetsForm extends Component {
                 </div>
               </div>
 
+              {/* Here the user selects an outcome -- ex. Home Win, Draw, etc. */}
               <div className="betOutcome">
                 <h4>Select a outcome:</h4>
                 <div className="betOutcomeBtn">
@@ -136,6 +159,7 @@ class BetsForm extends Component {
                 </div>
               </div>
 
+              {/* Preview the user's final bet and outcome  */}
               <div className="finalBet">
                 <h3>Your prediction:</h3>
                 <div className="prediciton">
@@ -154,14 +178,17 @@ class BetsForm extends Component {
                 </div>
               </div>
               <br />
+              {/* Gambling warning for user: */}
               <p>
                 Betting is a risk, and by placing this bet you acknowledge that
                 you take that risk willingly.
               </p>
               <div className="clearfix">
+                {/* TODO -- push user back to the games page or the dashboard */}
                 <button type="button" className="cancelbtn">
                   Cancel
                 </button>
+                {/* onSubmit action is handled on the form */}
                 <button type="submit" className="signupbtn">
                   Submit
                 </button>
@@ -176,12 +203,14 @@ class BetsForm extends Component {
   }
 }
 
+// user needs access to the betting odds for a specific game
 const mapStateToProps = state => {
   return {
     betInfo: state.betInfo
   };
 };
 
+// set the make bet action to the props of this componet
 const mapDispatchToProps = dispatch => {
   return {
     newBet: (token, amt, odds, game, betType) =>
