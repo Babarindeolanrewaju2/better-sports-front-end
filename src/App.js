@@ -1,10 +1,14 @@
 import React, { Component, Fragment } from "react";
 import { Route, withRouter } from "react-router-dom";
 
+// connect to Redux state
 import { connect } from "react-redux";
+// auto logs in user upon refresh
 import { auto_login } from "./actions/fetchActions";
+// gets all teams
 import { fetchTeams } from "./actions/soccerTeamsActions";
 
+// all containers needed for routes
 import Home from "./containers/Home";
 import GamesPage from "./containers/GamesPage";
 import Dashboard from "./containers/Dashboard";
@@ -36,12 +40,19 @@ class App extends Component {
   render() {
     return (
       <Fragment>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/signup" component={SignupPage} />
+        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/addFunds" component={AddFunds} />
+        <Route exact path="/betterSportsTerms" component={TermsOfService} />
+        <Route exact path="/bets/new" component={CreateBets} />
+        <Route exact path="/bets" component={AllBets} />
+        <Route exact path="/teams/soccer" component={TeamsPage} />
+        <Route exact path="/teams/soccer/:id" component={SoccerShowPage} />
         <Route
           exact
-          path="/"
-          render={routerProps => (
-            <Home {...routerProps} currentUser={this.props.currentUser} />
-          )}
+          path="/teams/soccer/players/:id"
+          component={PlayerShowPage}
         />
         <Route
           exact
@@ -60,35 +71,6 @@ class App extends Component {
               currentUser={this.props.currentUser}
             />
           )}
-        />
-        <Route
-          exact
-          path="/signup"
-          render={routerProps => (
-            <SignupPage {...routerProps} currentUser={this.props.currentUser} />
-          )}
-        />
-        <Route
-          exact
-          path="/login"
-          render={routerProps => (
-            <LoginPage {...routerProps} currentUser={this.props.currentUser} />
-          )}
-        />
-        <Route
-          exact
-          path="/addFunds"
-          render={routerProps => <AddFunds {...routerProps} />}
-        />
-        <Route exact path="/betterSportsTerms" component={TermsOfService} />
-        <Route exact path="/bets/new" component={CreateBets} />
-        <Route exact path="/bets" component={AllBets} />
-        <Route exact path="/teams/soccer" component={TeamsPage} />
-        <Route exact path="/teams/soccer/:id" component={SoccerShowPage} />
-        <Route
-          exact
-          path="/teams/soccer/players/:id"
-          component={PlayerShowPage}
         />
       </Fragment>
     );

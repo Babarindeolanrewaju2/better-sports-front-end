@@ -1,3 +1,4 @@
+// set default Redux state
 const initialState = {
   games: [],
   bets: [],
@@ -8,6 +9,7 @@ const initialState = {
   betInfo: {}
 };
 
+// reducer with cases for Redux
 function reducer(state = initialState, action) {
   switch (action.type) {
     case "UPDATE_GAMES":
