@@ -2,15 +2,21 @@ import React from "react";
 
 // connect to Redux state
 import { connect } from "react-redux";
+
+// use react router for navigation links
 import { NavLink } from "react-router-dom";
 
+// styling
 import "../styles/Navbar.css";
 
 const Navbar = props => {
+  // if logout is clicked, remove token from browser
   const logMeOut = () => {
     localStorage.removeItem("token");
   };
 
+  // if the brower has a token in localStorage,
+  // display the navbar for a logged in user
   if (localStorage.getItem("token")) {
     return (
       <div className="nav">
@@ -47,6 +53,7 @@ const Navbar = props => {
       </div>
     );
   } else {
+    // display the navbar for someone who is not logged in
     return (
       <div className="nav">
         <img
