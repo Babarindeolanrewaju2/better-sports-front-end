@@ -38,6 +38,7 @@ const Signup = props => {
           <h1>Sign Up</h1>
           <p>Please fill in this form to create an account.</p>
           <hr />
+          {/* Input fields for user to sign up with */}
           <label htmlFor="firstname">
             <b>First name</b>
           </label>
@@ -92,9 +93,12 @@ const Signup = props => {
           </p>
 
           <div className="clearfix">
+            {/* TODO connect this button */}
             <button type="button" className="cancelSignup">
               Cancel
             </button>
+            {/* onSubmit is on the form, and POSTs to the back end to create
+              a user and to return a token */}
             <button type="submit" className="signUpBtn">
               Sign Up
             </button>

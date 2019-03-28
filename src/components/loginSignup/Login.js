@@ -2,8 +2,12 @@ import React from "react";
 
 // connect to Redux state
 import { connect } from "react-redux";
+
+// get the login method, which POSTs to the back end and returns a token
+// if the user is verified by the back end
 import { login } from "../../actions/fetchActions";
 
+// styling
 import "../../styles/Login.css";
 
 const Login = props => {
@@ -30,10 +34,12 @@ const Login = props => {
     <div className="loginContainer">
       <div className="loginForm">
         <form id="login" onSubmit={handleSubmit}>
+          {/* Instructions for user */}
           <h1>Login</h1>
           <p>Please fill in this form to login.</p>
           <hr />
           <br />
+          {/* Email and Password inputs */}
           <label htmlFor="email">
             <b>Email</b>
           </label>
@@ -50,6 +56,8 @@ const Login = props => {
           />
           <br />
 
+          {/* upon submition, log the user in with the callback that is done via
+            onSubmit which is placed on the form */}
           <div className="clearfix">
             <button type="submit" className="loginbtn">
               Login

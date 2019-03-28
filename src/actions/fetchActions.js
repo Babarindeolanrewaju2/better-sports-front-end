@@ -30,7 +30,7 @@ export function fetchGames(dispatch) {
 // allows user to login with email and password and returns
 // user object and token to store in state/browser
 // Used in LoginSignup/Login component
-export function login(dispatch, email, pwd, callback) {
+export function login(dispatch, email, pwd) {
   console.log("callback", callback);
   return fetch(LOGIN_USER, {
     method: "POST",
