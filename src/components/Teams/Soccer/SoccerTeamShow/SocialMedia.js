@@ -7,6 +7,8 @@ const SocialMedia = props => {
   return (
     <Fragment>
       <ul>
+        {/* if the team has a website in the database return this icon
+          and make it a link */}
         {team.website && (
           <li className="socialLink">
             <a
@@ -23,6 +25,8 @@ const SocialMedia = props => {
           </li>
         )}
 
+        {/* if the team has a facebook in the database return this icon
+          and make it a link */}
         {team.facebook && (
           <li className="socialLink">
             <a
@@ -39,6 +43,8 @@ const SocialMedia = props => {
           </li>
         )}
 
+        {/* if the team has a instagram in the database return this icon
+          and make it a link */}
         {team.instagram && (
           <li className="socialLink">
             <a
@@ -55,6 +61,8 @@ const SocialMedia = props => {
           </li>
         )}
 
+        {/* if the team has a twitter in the database return this icon
+          and make it a link */}
         {team.twitter && (
           <li className="socialLink">
             <a

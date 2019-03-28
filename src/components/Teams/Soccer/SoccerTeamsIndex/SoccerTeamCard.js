@@ -9,6 +9,9 @@ const SoccerTeamCard = props => {
     props.routerProps.history.push(`/teams/soccer/${team.id}`);
   };
 
+  // the front of the card will have the team image on it
+  // the back of the card will display team name and league information
+  // this is show on the teams index page
   return (
     <div className="soccerTeamCard" onClick={handleClick}>
       <div className="soccer-card-inner">

@@ -31,7 +31,6 @@ export function fetchGames(dispatch) {
 // user object and token to store in state/browser
 // Used in LoginSignup/Login component
 export function login(dispatch, email, pwd) {
-  console.log("callback", callback);
   return fetch(LOGIN_USER, {
     method: "POST",
     headers: {

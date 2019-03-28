@@ -7,10 +7,12 @@ const TeamDetails = props => {
   return (
     <Fragment>
       <div className="teamBio">
+        {/* display team image */}
         <div className="teamImage">
           <img src={team.team_logo} alt="team logo" />
         </div>
 
+        {/* Primary team information  */}
         <div className="teamDetails">
           <h1>{team.name}</h1>
           <h3>{team.stadium_location}</h3>
@@ -19,6 +21,10 @@ const TeamDetails = props => {
         </div>
       </div>
 
+      {/* Description of team
+        TODO make this a component that only shows partial text
+        and on click can expand to show all text
+      */}
       <div className="teamDescription">
         <p>{team.description}</p>
       </div>

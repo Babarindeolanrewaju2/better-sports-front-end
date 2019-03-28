@@ -8,6 +8,7 @@ const TeamStadium = props => {
     <Fragment>
       <div className="teamShowStadiumHeader">
         <div className="teamShowStadiumImage">
+          {/* Show team stadium image or stock image */}
           <img
             src={
               team.stadium_thumbnail ||
@@ -17,6 +18,7 @@ const TeamStadium = props => {
           />
         </div>
 
+        {/* Stadium name */}
         <div className="teamShowStadiumName">
           <h2>
             Stadium: <br />
@@ -24,6 +26,7 @@ const TeamStadium = props => {
           </h2>
         </div>
 
+        {/* Show team jersey or stadium image or stock image if needed */}
         <div className="teamShowStadiumImage">
           <img
             src={
@@ -36,6 +39,7 @@ const TeamStadium = props => {
         </div>
       </div>
 
+      {/* Display stadium information */}
       <div className="teamShowStadiumDetails">
         <p>
           <span>Stadium capacity:</span>
