@@ -12,7 +12,9 @@ const Match = props => {
   // table columns in order from left to right:
   // Date, Home Team, Away Team, Home Win, Draw, Away Win, Home Win or Draw,
   // Away Win or Draw, Bet on this game
-
+  // --------------------------------------------------------------------------
+  // if this is a future game, their will be no outcome props, and this will return
+  // a table with a bet button
   if (props.outcome === false) {
     return (
       <tr>
@@ -30,6 +32,8 @@ const Match = props => {
       </tr>
     );
   } else {
+    // if this is a game that has already happened, then this will return a
+    // table that has an outcome column
     return (
       <Fragment>
         <tr>

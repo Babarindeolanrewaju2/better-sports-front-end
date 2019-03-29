@@ -13,33 +13,32 @@ const FutureGames = props => {
   };
 
   return (
-    <div className="gamesContainer">
+    <Fragment>
       <h1>Future Games</h1>
-      <div className="gamesList">
-        {props.futureGames.length === 0 ? (
-          <h1>Loading</h1>
-        ) : (
-          <Fragment>
-            <table>
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Home Team</th>
-                  <th>Away Team</th>
-                  <th>Home Win</th>
-                  <th>Draw</th>
-                  <th>Away Win</th>
-                  <th>Home Win or Draw</th>
-                  <th>Away Win or Draw</th>
-                  <th>Bet on this game</th>
-                </tr>
-              </thead>
-              <tbody>{mapGameInfoToMatchCard()}</tbody>
-            </table>
-          </Fragment>
-        )}
-      </div>
-    </div>
+
+      {props.futureGames.length === 0 ? (
+        <h1>Loading</h1>
+      ) : (
+        <Fragment>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Home Team</th>
+                <th>Away Team</th>
+                <th>Home Win</th>
+                <th>Draw</th>
+                <th>Away Win</th>
+                <th>Home Win or Draw</th>
+                <th>Away Win or Draw</th>
+                <th>Bet on this game</th>
+              </tr>
+            </thead>
+            <tbody>{mapGameInfoToMatchCard()}</tbody>
+          </table>
+        </Fragment>
+      )}
+    </Fragment>
   );
 };
 

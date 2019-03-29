@@ -32,7 +32,7 @@ class Games extends Component {
   // outcome and no longer be eligible for bets
   getFutureGames = () => {
     return this.props.games.filter(game => {
-      return new Date(game.attributes.match_date) > today;
+      return new Date(game.attributes.match_date) >= today;
     });
   };
 
@@ -44,8 +44,12 @@ class Games extends Component {
             <h1>Loading</h1>
           ) : (
             <Fragment>
-              <FutureGames futureGames={this.getFutureGames()} />
-              <PastGames pastGames={this.getPastGames()} />
+              <div className="futureGamesList">
+                <FutureGames futureGames={this.getFutureGames()} />
+              </div>
+              <div className="pastGamesList">
+                <PastGames pastGames={this.getPastGames()} />
+              </div>
             </Fragment>
           )}
         </div>
