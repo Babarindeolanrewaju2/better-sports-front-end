@@ -31,7 +31,7 @@ const PastGames = props => {
                   <th>Away Win</th>
                   <th>Home Win or Draw</th>
                   <th>Away Win or Draw</th>
-                  <th>Bet on this game</th>
+                  <th>Outcome</th>
                 </tr>
               </thead>
               <tbody>{mapGameInfoToMatchCard()}</tbody>

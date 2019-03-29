@@ -8,7 +8,7 @@ const FutureGames = props => {
   // create all match rows for the table to be displayed
   const mapGameInfoToMatchCard = () => {
     return props.futureGames.map(game => {
-      return <Match key={game.id} game={game} {...props} />;
+      return <Match key={game.id} game={game} {...props} outcome={false} />;
     });
   };
 

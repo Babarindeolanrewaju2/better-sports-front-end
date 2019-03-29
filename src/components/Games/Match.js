@@ -12,8 +12,9 @@ const Match = props => {
   // table columns in order from left to right:
   // Date, Home Team, Away Team, Home Win, Draw, Away Win, Home Win or Draw,
   // Away Win or Draw, Bet on this game
-  return (
-    <Fragment>
+
+  if (props.outcome === false) {
+    return (
       <tr>
         <td>{gameDetails.match_date}</td>
         <td>{homeTeamDetails.name}</td>
@@ -27,8 +28,24 @@ const Match = props => {
           <BetButton game={props.game} {...props} />
         </td>
       </tr>
-    </Fragment>
-  );
+    );
+  } else {
+    return (
+      <Fragment>
+        <tr>
+          <td>{gameDetails.match_date}</td>
+          <td>{homeTeamDetails.name}</td>
+          <td>{awayTeamDetails.name}</td>
+          <td>{gameDetails.one}</td>
+          <td>{gameDetails.draw}</td>
+          <td>{gameDetails.two}</td>
+          <td>{gameDetails.oneDraw}</td>
+          <td>{gameDetails.twoDraw}</td>
+          <td>{gameDetails.winner}</td>
+        </tr>
+      </Fragment>
+    );
+  }
 };
 
 export default Match;
