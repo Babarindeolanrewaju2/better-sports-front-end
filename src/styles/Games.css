@@ -3,6 +3,21 @@
 .gamesList {
   width: 95%;
   margin: auto;
+  font-family: "Varela Round", "Comfortaa", sans-serif;
+}
+
+.gamesList h1 {
+  color: #e7dfdd;
+}
+
+.futureGamesList {
+  width: 95%;
+  margin: auto;
+}
+
+.pastGamesList {
+  width: 95%;
+  margin: auto;
 }
 
 table {
