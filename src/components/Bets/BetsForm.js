@@ -66,6 +66,7 @@ class BetsForm extends Component {
 
   render() {
     // when bet info is available, display a betting form
+    console.log(this.props);
     if (this.props.betInfo !== {}) {
       return (
         <div className="betsFormContainer">
@@ -185,8 +186,15 @@ class BetsForm extends Component {
                 you take that risk willingly.
               </p>
               <div className="clearfix">
-                {/* TODO -- push user back to the games page or the dashboard */}
-                <button type="button" className="cancelbtn">
+                {/* when the cancel btn is clicked the user goes back to the
+                  last page that they were on */}
+                <button
+                  type="button"
+                  className="cancelbtn"
+                  onClick={() => {
+                    this.props.history.goBack();
+                  }}
+                >
                   Cancel
                 </button>
                 {/* onSubmit action is handled on the form */}
