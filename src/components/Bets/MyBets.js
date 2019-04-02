@@ -32,8 +32,8 @@ const MyBets = props => {
   if (props.limitBets) {
     return (
       <div className="gamesContainer">
-        <h1>Your Bets</h1>
         <div className="gamesList">
+          <h1>Your Bets</h1>
           {/* Assure that the games information exits */}
           {props.games.length === 0 ? (
             <h1>Loading</h1>

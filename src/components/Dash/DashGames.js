@@ -25,7 +25,10 @@ const DashGames = props => {
         See all games
       </a>
       {/* Pass routerProps and limited games to the component */}
-      <FutureGames {...props} futureGames={limitGames} {...props} />
+
+      <div className="gamesList">
+        <FutureGames {...props} futureGames={limitGames} {...props} />
+      </div>
     </Fragment>
   );
 };

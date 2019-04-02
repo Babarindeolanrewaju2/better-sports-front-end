@@ -29,8 +29,8 @@ const PastGames = props => {
                 <th>Home Win</th>
                 <th>Draw</th>
                 <th>Away Win</th>
-                <th>Home Win or Draw</th>
-                <th>Away Win or Draw</th>
+                <th>Home Win/Draw</th>
+                <th>Away Win/Draw</th>
                 <th>Outcome</th>
               </tr>
             </thead>

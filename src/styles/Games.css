@@ -8,6 +8,7 @@
 
 .gamesList h1 {
   color: #e7dfdd;
+  padding: 1.5vh 0;
 }
 
 .futureGamesList {
@@ -38,6 +39,7 @@ tr {
   height: 50px;
   border: 2px black solid;
   font-size: 25px;
+  padding: 1vh;
 }
 
 /* tbody tr:nth-child(odd) { */
