@@ -1,0 +1,10 @@
+.betsList {
+  width: 95%;
+  margin: auto;
+  font-family: "Varela Round", "Comfortaa", sans-serif;
+}
+
+.betsList h1 {
+  color: #e7dfdd;
+  padding: 1.5vh 0;
+}

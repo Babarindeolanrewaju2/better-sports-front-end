@@ -8,18 +8,49 @@ const BetCard = props => {
   // table columns in order from left to right:
   // Date, Home Team, Away Team, Home Win, Draw, Away Win, Home Win or Draw,
   // Away Win or Draw, Bet on this game
-  return (
-    <Fragment>
-      <tr>
-        <td>{gameDetails.match_date}</td>
-        <td>{gameDetails.matchName}</td>
-        <td>{bet.betType}</td>
-        <td>{bet.odds}</td>
-        <td>${bet.wager}</td>
-        <td>{gameDetails.winner || "Game not yet played"}</td>
-      </tr>
-    </Fragment>
-  );
+
+  console.log(bet.betType, gameDetails.winner);
+
+  if (gameDetails.winner === null) {
+    return (
+      <Fragment>
+        <tr>
+          <td>{gameDetails.match_date}</td>
+          <td>{gameDetails.matchName}</td>
+          <td>{bet.betType}</td>
+          <td>{bet.odds}</td>
+          <td>${bet.wager}</td>
+          <td>Game not yet played</td>
+        </tr>
+      </Fragment>
+    );
+  } else if (bet.betType === gameDetails.winner) {
+    return (
+      <Fragment>
+        <tr className="green">
+          <td>{gameDetails.match_date}</td>
+          <td>{gameDetails.matchName}</td>
+          <td>{bet.betType}</td>
+          <td>{bet.odds}</td>
+          <td>${bet.wager}</td>
+          <td>{gameDetails.winner}</td>
+        </tr>
+      </Fragment>
+    );
+  } else {
+    return (
+      <Fragment>
+        <tr className="red">
+          <td>{gameDetails.match_date}</td>
+          <td>{gameDetails.matchName}</td>
+          <td>{bet.betType}</td>
+          <td>{bet.odds}</td>
+          <td>${bet.wager}</td>
+          <td>{gameDetails.winner}</td>
+        </tr>
+      </Fragment>
+    );
+  }
 };
 
 export default BetCard;

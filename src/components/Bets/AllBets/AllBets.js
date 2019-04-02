@@ -8,7 +8,7 @@ import { fetchGames } from "../../../actions/fetchActions";
 import AllBetsCards from "./AllBetsCards";
 
 // styling
-import "../../../styles/Games.css";
+import "../../../styles/AllBets.css";
 
 class MyBets extends Component {
   // find the game that the bet is made on so that each bet will be able to display
@@ -38,8 +38,8 @@ class MyBets extends Component {
     // if the user has a bets prop
     if (this.props.bets) {
       return (
-        <div className="gamesContainer">
-          <div className="gamesList">
+        <div className="betsContainer">
+          <div className="betsList">
             <h1>Your Bets</h1>
             {this.props.games.length === 0 ? (
               <h1>Loading</h1>
