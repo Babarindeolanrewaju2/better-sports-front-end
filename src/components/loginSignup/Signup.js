@@ -94,7 +94,13 @@ const Signup = props => {
 
           <div className="clearfix">
             {/* TODO connect this button */}
-            <button type="button" className="cancelSignup">
+            <button
+              type="button"
+              className="cancelSignup"
+              onClick={() => {
+                props.history.push("/");
+              }}
+            >
               Cancel
             </button>
             {/* onSubmit is on the form, and POSTs to the back end to create
