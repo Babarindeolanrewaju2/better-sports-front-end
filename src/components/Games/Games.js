@@ -45,7 +45,13 @@ class Games extends Component {
           ) : (
             <Fragment>
               <div className="futureGamesList">
-                <FutureGames futureGames={this.getFutureGames()} />
+                <FutureGames
+                  futureGames={this.getFutureGames()}
+                  {...this.props}
+                />
+                {/*this.props (rourterProps in this instance)
+                  is passed here so that the future games will have access to
+                  the abilitiy to push to the next screen*/}
               </div>
               <div className="pastGamesList">
                 <PastGames pastGames={this.getPastGames()} />

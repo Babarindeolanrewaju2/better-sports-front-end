@@ -14,6 +14,7 @@ import DashBets from "../components/Dash/DashBets";
 import "../styles/Dashboard.css";
 
 const Dashboard = props => {
+  console.log(props);
   return (
     <Fragment>
       <Navbar />
