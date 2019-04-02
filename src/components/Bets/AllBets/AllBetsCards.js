@@ -27,7 +27,7 @@ const BetCard = props => {
   } else if (bet.betType === gameDetails.winner) {
     return (
       <Fragment>
-        <tr className="green">
+        <tr className="greenBet">
           <td>{gameDetails.match_date}</td>
           <td>{gameDetails.matchName}</td>
           <td>{bet.betType}</td>
@@ -40,7 +40,7 @@ const BetCard = props => {
   } else {
     return (
       <Fragment>
-        <tr className="red">
+        <tr className="redBet">
           <td>{gameDetails.match_date}</td>
           <td>{gameDetails.matchName}</td>
           <td>{bet.betType}</td>

@@ -8,3 +8,12 @@
   color: #e7dfdd;
   padding: 1.5vh 0;
 }
+
+.greenBet {
+  background-color: #98fb98;
+  /* opacity: 0.75; */
+}
+
+.redBet {
+  background-color: #ffb2b2;
+}
