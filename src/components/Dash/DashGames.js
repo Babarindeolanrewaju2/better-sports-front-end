@@ -1,10 +1,21 @@
 import React, { Fragment } from "react";
 
-import Games from "../Games/Games";
+import FutureGames from "../Games/FutureGames";
 
 const DashGames = props => {
   //only show the next three upcoming games on the dashboard
-  const limitGames = props.games.slice(0, 3);
+
+  // need today's date to compare to for future games
+  const today = new Date();
+
+  // determine all future games
+  const getFutureGames = () => {
+    return props.games.filter(game => {
+      return new Date(game.attributes.match_date) >= today;
+    });
+  };
+
+  const limitGames = getFutureGames().slice(0, 3);
 
   return (
     <Fragment>
@@ -14,7 +25,7 @@ const DashGames = props => {
         See all games
       </a>
       {/* Pass routerProps and limited games to the component */}
-      <Games {...props} games={limitGames} />
+      <FutureGames {...props} futureGames={limitGames} />
     </Fragment>
   );
 };

@@ -16,6 +16,7 @@ const BetCard = props => {
         <td>{bet.betType}</td>
         <td>{bet.odds}</td>
         <td>${bet.wager}</td>
+        <td>{gameDetails.winner || "Game not yet played"}</td>
       </tr>
     </Fragment>
   );
