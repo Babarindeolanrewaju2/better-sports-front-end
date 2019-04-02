@@ -93,7 +93,7 @@ const Signup = props => {
           </p>
 
           <div className="clearfix">
-            {/* TODO connect this button */}
+            {/* upon click, the cancel btn pushes to the homepage */}
             <button
               type="button"
               className="cancelSignup"
