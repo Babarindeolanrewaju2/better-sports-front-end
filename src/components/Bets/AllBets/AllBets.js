@@ -39,8 +39,8 @@ class MyBets extends Component {
     if (this.props.bets) {
       return (
         <div className="gamesContainer">
-          <h1>Your Bets</h1>
           <div className="gamesList">
+            <h1>Your Bets</h1>
             {this.props.games.length === 0 ? (
               <h1>Loading</h1>
             ) : (
