@@ -169,20 +169,43 @@ class BetsForm extends Component {
               {/* Preview the user's final bet and outcome  */}
               <div className="finalBet">
                 <h3>Your prediction:</h3>
-                <div className="prediciton">
-                  {this.state.winner === "" ? "Guess" : this.state.winner}
-                </div>
-                <div className="odds">
-                  {this.state.odds === "" ? "Odds" : this.state.odds}
-                </div>
-                <div className="wager">
-                  {this.state.amount === 0 ? "Wager" : this.state.amount}
-                </div>
-                <div className="potential">
-                  {this.state.odds === ""
-                    ? "Potential Wine"
-                    : `${this.calculatePotentialWin()}`}
-                </div>
+
+                <table>
+                  <thead>
+                    <tr>
+                      <th> Prediction </th>
+                      <th> Odds </th>
+                      <th> Wager </th>
+                      <th> Potential Win </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <td>
+                      {" "}
+                      {this.state.winner === ""
+                        ? "Your Guess"
+                        : this.state.winner}{" "}
+                    </td>
+                    <td>
+                      {" "}
+                      {this.state.odds === ""
+                        ? "Selected Odds"
+                        : this.state.odds}{" "}
+                    </td>
+                    <td>
+                      {" "}
+                      {this.state.amount === 0
+                        ? "Your Wager"
+                        : `$ ${this.state.amount}`}{" "}
+                    </td>
+                    <td>
+                      {" "}
+                      {this.state.odds === ""
+                        ? "Potential Win"
+                        : `$ ${this.calculatePotentialWin()}`}{" "}
+                    </td>
+                  </tbody>
+                </table>
               </div>
               <br />
               {/* Gambling warning for user: */}
