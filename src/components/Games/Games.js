@@ -36,7 +36,7 @@ const Games = props => {
           <Fragment>
             <div className="futureGamesList">
               <FutureGames futureGames={getFutureGames()} {...props} />
-              {/*this.props (rourterProps in this instance)
+              {/* props (rourterProps in this instance)
                   is passed here so that the future games will have access to
                   the abilitiy to push to the next screen*/}
             </div>
