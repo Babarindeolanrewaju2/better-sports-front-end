@@ -48,7 +48,7 @@
   margin: 0.5vh auto;
   background: #0e0b16;
   color: white;
-  font-size: 1em;
+  font-size: 2vmin;
 }
 
 .betWagerBtn button:hover {
@@ -86,7 +86,7 @@
   margin: 0.5vh auto;
   background: #0e0b16;
   color: white;
-  font-size: 1em;
+  font-size: 2vmin;
 }
 
 .betOutcomeBtn button:hover {

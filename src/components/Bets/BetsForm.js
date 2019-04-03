@@ -26,7 +26,12 @@ class BetsForm extends Component {
 
   // changes the wager amount in state
   setAmount = event => {
-    this.setState({ ...this.state, amount: event.target.value });
+    if (event.target.value <= 10000) {
+      this.setState({ ...this.state, amount: event.target.value });
+    } else {
+      this.setState({ ...this.state, amount: 10000 });
+      event.target.value = 10000;
+    }
   };
 
   // changes the winner AND odds values in state
@@ -76,7 +81,7 @@ class BetsForm extends Component {
               {/* Instructions for user */}
               <p>
                 Please select your wager amount and the outcome you are betting
-                on.
+                on. <span>Maximum bet of $10,000.</span>
               </p>
               <hr />
 
