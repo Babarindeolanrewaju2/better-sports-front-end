@@ -183,25 +183,25 @@ class BetsForm extends Component {
                     <td>
                       {" "}
                       {this.state.winner === ""
-                        ? "Your Guess"
+                        ? "Select a winner"
                         : this.state.winner}{" "}
                     </td>
                     <td>
                       {" "}
                       {this.state.odds === ""
-                        ? "Selected Odds"
+                        ? "Select a winner"
                         : this.state.odds}{" "}
                     </td>
                     <td>
                       {" "}
                       {this.state.amount === 0
-                        ? "Your Wager"
+                        ? " Select your wager"
                         : `$ ${this.state.amount}`}{" "}
                     </td>
                     <td>
                       {" "}
                       {this.state.odds === ""
-                        ? "Potential Win"
+                        ? "Select winner and wager"
                         : `$ ${this.calculatePotentialWin()}`}{" "}
                     </td>
                   </tbody>

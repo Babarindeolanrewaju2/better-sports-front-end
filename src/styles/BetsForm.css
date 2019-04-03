@@ -94,6 +94,23 @@
   color: white;
 }
 
+.finalBet table {
+  margin: 2vh 1vw;
+  font-size: 2vmin;
+  background: white;
+  border: white;
+}
+
+.finalBet th {
+  color: white;
+  background-color: #0e0b16;
+}
+.finalBet td {
+  padding: 0.5vh;
+  background-color: #0e0b16;
+  color: #a234ca;
+}
+
 /* Set a style for all buttons */
 .signupbtn {
   background-color: dodgerblue;
