@@ -17,7 +17,11 @@ class IncreaseBalance extends Component {
   // when a user selects an ammount, this callback changes
   // the value of amount in state
   handleAmountChange = event => {
-    this.setState({ amount: parseInt(event.target.value) });
+    if (event.target.value <= 5000) {
+      this.setState({ amount: parseInt(event.target.value) });
+    } else {
+      alert("A maximum of $5000 may be added at one time.");
+    }
   };
 
   // when a user submits the form this event callback is invoked
@@ -64,7 +68,8 @@ class IncreaseBalance extends Component {
             <h1>{this.props.user.first_name}, add funds to your account:</h1>
             <h3>
               Select an amount below to debit funds from your bank and add to
-              your Better Sports account.
+              your Better Sports account. Please note: a maximum of $5000 may be
+              added at one time.
             </h3>
             <form id="addFunds" onSubmit={this.handleSubmit}>
               {/* button to add $50 to account */}
@@ -116,7 +121,7 @@ class IncreaseBalance extends Component {
               {/*increase their account */}
               <input
                 type="submit"
-                value={`Add $${this.state.amount} to account`}
+                value={`Add $${this.state.amount || 0} to account`}
               />
             </form>
           </div>
