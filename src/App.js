@@ -5,8 +5,9 @@ import { Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 // auto logs in user upon refresh
 import { auto_login } from "./actions/fetchActions";
-// gets all teams
+// gets all teams and games
 import { fetchTeams } from "./actions/soccerTeamsActions";
+import { fetchGames } from "./actions/fetchActions";
 
 // all containers needed for routes
 import Home from "./containers/Home";
@@ -33,8 +34,11 @@ class App extends Component {
       this.props.auto_login(token);
     }
 
-    //get all teams
+    // get all teams
     this.props.getTeams();
+
+    // get all games
+    this.props.getGames();
   }
 
   render() {
@@ -90,7 +94,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     auto_login: token => auto_login(dispatch, token),
-    getTeams: () => fetchTeams(dispatch)
+    getTeams: () => fetchTeams(dispatch),
+    getGames: () => fetchGames(dispatch)
   };
 }
 
