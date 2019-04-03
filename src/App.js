@@ -69,11 +69,7 @@ class App extends Component {
           exact
           path="/dashboard"
           render={routerProps => (
-            <Dashboard
-              {...routerProps}
-              games={this.props.games}
-              currentUser={this.props.currentUser}
-            />
+            <Dashboard {...routerProps} games={this.props.games} />
           )}
         />
       </Fragment>
