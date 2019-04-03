@@ -9,8 +9,6 @@ const BetCard = props => {
   // Date, Home Team, Away Team, Home Win, Draw, Away Win, Home Win or Draw,
   // Away Win or Draw, Bet on this game
 
-  console.log(bet.betType, gameDetails.winner);
-
   if (gameDetails.winner === null) {
     return (
       <Fragment>
