@@ -128,6 +128,10 @@ export function auto_login(dispatch, token) {
   })
     .then(res => res.json())
     .then(user => {
+      dispatch({
+        type: "USER_TOKEN",
+        payload: token
+      });
       dispatch({ type: "CURRENT_USER", payload: user["data"] });
     });
 }

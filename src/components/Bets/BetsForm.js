@@ -62,8 +62,14 @@ class BetsForm extends Component {
     // verify that user has selected values for all items required to make
     // a bet -- otherwise alert error message
     if (amount && odds && betType) {
-      this.props.newBet(token, amount, odds, game, betType);
-      this.props.history.push("/dashboard");
+      if (amount <= this.props.user.attributes.accounts[0].balance) {
+        this.props.newBet(token, amount, odds, game, betType);
+        this.props.history.push("/dashboard");
+      } else {
+        alert(
+          "Please choose a wager amount that is less than or equal to your account balance."
+        );
+      }
     } else {
       alert("Please select a wager amount and an outcome.");
     }
@@ -71,7 +77,7 @@ class BetsForm extends Component {
 
   render() {
     // when bet info is available, display a betting form
-
+    console.log(this.props.user);
     if (this.props.betInfo !== {}) {
       return (
         <div className="betsFormContainer">
@@ -245,7 +251,8 @@ class BetsForm extends Component {
 // user needs access to the betting odds for a specific game
 const mapStateToProps = state => {
   return {
-    betInfo: state.betInfo
+    betInfo: state.betInfo,
+    user: state.currentUser
   };
 };
 
