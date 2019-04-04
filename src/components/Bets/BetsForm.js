@@ -71,7 +71,7 @@ class BetsForm extends Component {
 
   render() {
     // when bet info is available, display a betting form
-    console.log(this.props);
+
     if (this.props.betInfo !== {}) {
       return (
         <div className="betsFormContainer">
@@ -180,30 +180,32 @@ class BetsForm extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    <td>
-                      {" "}
-                      {this.state.winner === ""
-                        ? "Select a winner"
-                        : this.state.winner}{" "}
-                    </td>
-                    <td>
-                      {" "}
-                      {this.state.odds === ""
-                        ? "Select a winner"
-                        : this.state.odds}{" "}
-                    </td>
-                    <td>
-                      {" "}
-                      {this.state.amount === 0
-                        ? " Select your wager"
-                        : `$ ${this.state.amount}`}{" "}
-                    </td>
-                    <td>
-                      {" "}
-                      {this.state.odds === ""
-                        ? "Select winner and wager"
-                        : `$ ${this.calculatePotentialWin()}`}{" "}
-                    </td>
+                    <tr>
+                      <td>
+                        {" "}
+                        {this.state.winner === ""
+                          ? "Select a winner"
+                          : this.state.winner}{" "}
+                      </td>
+                      <td>
+                        {" "}
+                        {this.state.odds === ""
+                          ? "Select a winner"
+                          : this.state.odds}{" "}
+                      </td>
+                      <td>
+                        {" "}
+                        {this.state.amount === 0
+                          ? " Select your wager"
+                          : `$ ${this.state.amount}`}{" "}
+                      </td>
+                      <td>
+                        {" "}
+                        {this.state.odds === ""
+                          ? "Select winner and wager"
+                          : `$ ${this.calculatePotentialWin()}`}{" "}
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>

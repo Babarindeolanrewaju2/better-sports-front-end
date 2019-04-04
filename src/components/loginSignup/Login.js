@@ -20,7 +20,7 @@ const Login = props => {
     let pwd = event.target.password.value;
 
     // used login method to verify user in DB and return token or error
-    console.log(props);
+
     props.login(email, pwd, () => {
       props.history.push("/dashboard");
     });
