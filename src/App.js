@@ -90,7 +90,7 @@ class App extends Component {
               path="/teams/soccer/players/:id"
               component={PlayerShowPage}
             />
-            <Route component={LoginPage} />
+            <Redirect to="/login" />
           </Switch>
         </Fragment>
       );
