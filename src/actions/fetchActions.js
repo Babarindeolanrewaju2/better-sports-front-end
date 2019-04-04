@@ -70,7 +70,7 @@ export function login(dispatch, email, pwd, callback) {
 // allows a new user to sign up for an account and returns
 // user object and token to store in state/browser
 // Used in LoginSignup/Signup component
-export function signup(dispatch, firstname, lastname, email, pwd) {
+export function signup(dispatch, firstname, lastname, email, pwd, callback) {
   return fetch(CREATE_ACCT, {
     method: "POST",
     headers: {
@@ -86,15 +86,22 @@ export function signup(dispatch, firstname, lastname, email, pwd) {
   })
     .then(res => res.json())
     .then(newUser => {
-      if (newUser.error) {
-        alert(newUser.error);
+      if (newUser.error || newUser.errors) {
+        alert(newUser.errors);
       } else {
         localStorage.setItem("token", newUser.token);
+
+        dispatch({
+          type: "USER_TOKEN",
+          payload: newUser.token
+        });
 
         return dispatch({
           type: "CURRENT_USER",
           payload: newUser["user"]["data"]
         });
+
+        callback && callback();
       }
     });
 }
