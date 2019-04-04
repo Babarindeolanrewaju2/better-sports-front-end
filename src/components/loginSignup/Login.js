@@ -21,12 +21,14 @@ const Login = props => {
 
     // used login method to verify user in DB and return token or error
     console.log(props);
-    props.login(email, pwd);
+    props.login(email, pwd, () => {
+      props.history.push("/dashboard");
+    });
 
     // clear form of current data
     document.getElementById("login").reset();
-    //props.history.push("/teams/soccer");
-    props.history.push("/dashboard");
+
+    //  props.history.push("/dashboard");
   }
 
   // display form HTML

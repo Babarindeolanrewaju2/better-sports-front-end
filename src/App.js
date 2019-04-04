@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { Route, withRouter } from "react-router-dom";
+import { Route, withRouter, Redirect, Switch } from "react-router-dom";
 
 // connect to Redux state
 import { connect } from "react-redux";
@@ -42,38 +42,59 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <Fragment>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/signup" component={SignupPage} />
-        <Route exact path="/login" component={LoginPage} />
-        <Route exact path="/addFunds" component={AddFunds} />
-        <Route exact path="/betterSportsTerms" component={TermsOfService} />
-        <Route exact path="/bets/new" component={CreateBets} />
-        <Route exact path="/bets" component={AllBets} />
-        <Route exact path="/teams/soccer" component={TeamsPage} />
-        <Route exact path="/teams/soccer/:id" component={SoccerShowPage} />
-        <Route
-          exact
-          path="/teams/soccer/players/:id"
-          component={PlayerShowPage}
-        />
-        <Route
-          exact
-          path="/games"
-          render={routerProps => (
-            <GamesPage {...routerProps} games={this.props.games} />
-          )}
-        />
-        <Route
-          exact
-          path="/dashboard"
-          render={routerProps => (
-            <Dashboard {...routerProps} games={this.props.games} />
-          )}
-        />
-      </Fragment>
-    );
+    if (this.props.token === localStorage["token"]) {
+      return (
+        <Fragment>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/signup" component={SignupPage} />
+          <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/addFunds" component={AddFunds} />
+          <Route exact path="/betterSportsTerms" component={TermsOfService} />
+          <Route exact path="/bets/new" component={CreateBets} />
+          <Route exact path="/bets" component={AllBets} />
+          <Route exact path="/teams/soccer" component={TeamsPage} />
+          <Route exact path="/teams/soccer/:id" component={SoccerShowPage} />
+          <Route
+            exact
+            path="/teams/soccer/players/:id"
+            component={PlayerShowPage}
+          />
+          <Route
+            exact
+            path="/games"
+            render={routerProps => (
+              <GamesPage {...routerProps} games={this.props.games} />
+            )}
+          />
+          <Route
+            exact
+            path="/dashboard"
+            render={routerProps => (
+              <Dashboard {...routerProps} games={this.props.games} />
+            )}
+          />
+        </Fragment>
+      );
+    } else {
+      return (
+        <Fragment>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/signup" component={SignupPage} />
+            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/betterSportsTerms" component={TermsOfService} />
+            <Route exact path="/teams/soccer" component={TeamsPage} />
+            <Route exact path="/teams/soccer/:id" component={SoccerShowPage} />
+            <Route
+              exact
+              path="/teams/soccer/players/:id"
+              component={PlayerShowPage}
+            />
+            <Route component={LoginPage} />
+          </Switch>
+        </Fragment>
+      );
+    }
   }
 }
 
@@ -83,7 +104,8 @@ function mapStateToProps(state) {
     bets: state.bets,
     teams: state.teams,
     players: state.players,
-    currentUser: state.currentUser
+    currentUser: state.currentUser,
+    token: state.token
   };
 }
 

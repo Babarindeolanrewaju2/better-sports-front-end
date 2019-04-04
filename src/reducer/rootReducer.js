@@ -6,6 +6,7 @@ const initialState = {
   players: [],
   selectedPlayer: {},
   currentUser: {},
+  token: null,
   betInfo: {}
 };
 
@@ -22,6 +23,9 @@ function reducer(state = initialState, action) {
       return { ...state, selectedPlayer: action.payload };
     case "CURRENT_USER":
       return { ...state, currentUser: action.payload };
+    case "USER_TOKEN":
+      return { ...state, token: action.payload };
+
     case "BET_INFO":
       return { ...state, betInfo: action.payload };
     default:

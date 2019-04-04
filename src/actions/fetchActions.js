@@ -30,7 +30,7 @@ export function fetchGames(dispatch) {
 // allows user to login with email and password and returns
 // user object and token to store in state/browser
 // Used in LoginSignup/Login component
-export function login(dispatch, email, pwd) {
+export function login(dispatch, email, pwd, callback) {
   return fetch(LOGIN_USER, {
     method: "POST",
     headers: {
@@ -52,11 +52,17 @@ export function login(dispatch, email, pwd) {
         }
       } else {
         localStorage.setItem("token", user.token);
-        console.log("LOOK HERE", user);
+
+        dispatch({
+          type: "USER_TOKEN",
+          payload: user.token
+        });
+
         dispatch({
           type: "CURRENT_USER",
           payload: user["user"]["data"]
         });
+        callback && callback();
       }
     });
 }
@@ -84,11 +90,11 @@ export function signup(dispatch, firstname, lastname, email, pwd) {
         alert(newUser.error);
       } else {
         localStorage.setItem("token", newUser.token);
+
         return dispatch({
           type: "CURRENT_USER",
           payload: newUser["user"]["data"]
         });
-        // TODO:  PUSH TO Dashboard here
       }
     });
 }
