@@ -38,30 +38,33 @@ export function login(dispatch, email, pwd, callback) {
       Accept: "application/json"
     },
     body: JSON.stringify({
-      email: email,
+      email: email, // pass email and pwd to the back-end
       password: pwd
     })
   })
     .then(res => res.json())
     .then(user => {
-      if (user.error || user.errors) {
-        if (user.errors) {
-          alert(user.errors);
-        } else {
-          alert(user.error);
-        }
+      if (user.errors) {
+        // if there are any errors, alert the user to said error
+        alert(user.errors);
       } else {
+        // set token to browser localStorage
         localStorage.setItem("token", user.token);
 
+        // set token in Redux state
         dispatch({
           type: "USER_TOKEN",
           payload: user.token
         });
 
+        // set user info in Redux state
         dispatch({
           type: "CURRENT_USER",
           payload: user["user"]["data"]
         });
+
+        // if the callback exists, invoke it
+        // this will push to the next page - '/dashboard'
         callback && callback();
       }
     });
@@ -78,7 +81,7 @@ export function signup(dispatch, firstname, lastname, email, pwd, callback) {
       Accept: "application/json"
     },
     body: JSON.stringify({
-      first_name: firstname,
+      first_name: firstname, // pass information to the back-end to create an account
       last_name: lastname,
       email: email,
       password: pwd
@@ -86,21 +89,27 @@ export function signup(dispatch, firstname, lastname, email, pwd, callback) {
   })
     .then(res => res.json())
     .then(newUser => {
-      if (newUser.error || newUser.errors) {
+      if (newUser.errors) {
+        // if there are any errors, alert the user to said errors
         alert(newUser.errors);
       } else {
+        // set token to browser localStorage
         localStorage.setItem("token", newUser.token);
 
+        // set token in Redux state
         dispatch({
           type: "USER_TOKEN",
           payload: newUser.token
         });
 
+        // set user info in Redux state
         return dispatch({
           type: "CURRENT_USER",
           payload: newUser["user"]["data"]
         });
 
+        // if the callback exists, invoke it
+        // this will push to the next page - '/dashboard'
         callback && callback();
       }
     });
