@@ -101,10 +101,6 @@ class App extends Component {
 function mapStateToProps(state) {
   return {
     games: state.games,
-    bets: state.bets,
-    teams: state.teams,
-    players: state.players,
-    currentUser: state.currentUser,
     token: state.token
   };
 }

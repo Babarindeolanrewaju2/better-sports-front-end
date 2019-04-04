@@ -56,11 +56,13 @@ const Navbar = props => {
     // display the navbar for someone who is not logged in
     return (
       <div className="nav">
-        <img
-          className="navLogo"
-          src="http://localhost:3000/images/betterSportsLogo.png"
-          alt="Better Sports Logo"
-        />
+        <a href="/">
+          <img
+            className="navLogo"
+            src="http://localhost:3000/images/betterSportsLogo.png"
+            alt="Better Sports Logo"
+          />
+        </a>
 
         <div className="homeLinks">
           <ul>
