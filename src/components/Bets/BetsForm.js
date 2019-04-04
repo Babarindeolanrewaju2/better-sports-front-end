@@ -62,7 +62,9 @@ class BetsForm extends Component {
     // verify that user has selected values for all items required to make
     // a bet -- otherwise alert error message
     if (amount && odds && betType) {
+      // checks to see that the wager amount is less than or equal to your account balance
       if (amount <= this.props.user.attributes.accounts[0].balance) {
+        // creates bet, and then pushes you to the user dashboard
         this.props.newBet(token, amount, odds, game, betType);
         this.props.history.push("/dashboard");
       } else {
