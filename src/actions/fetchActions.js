@@ -103,7 +103,7 @@ export function signup(dispatch, firstname, lastname, email, pwd, callback) {
         });
 
         // set user info in Redux state
-        return dispatch({
+        dispatch({
           type: "CURRENT_USER",
           payload: newUser["user"]["data"]
         });
