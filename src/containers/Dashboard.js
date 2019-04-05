@@ -27,7 +27,7 @@ const Dashboard = props => {
             <DashGames games={props.games} {...props} />
           </div>
           <div className="dashboardRightBottom">
-            {props.user ? <DashBets user={props.user} /> : null}
+            {props.user ? <DashBets user={props.user} {...props} /> : null}
           </div>
         </div>
       </div>

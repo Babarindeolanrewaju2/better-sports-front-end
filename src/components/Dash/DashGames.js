@@ -19,11 +19,11 @@ const DashGames = props => {
 
   return (
     <Fragment>
-      {/* have a link btn that allows users to click through to see all
+      {/* have button that allows users to click through to see all
         of their bets */}
-      <a href="/games" className="button" role="button">
+      <button className="button" onClick={() => props.history.push("/games")}>
         See all games
-      </a>
+      </button>
       {/* Pass routerProps and limited games to the component */}
 
       <div className="gamesList">

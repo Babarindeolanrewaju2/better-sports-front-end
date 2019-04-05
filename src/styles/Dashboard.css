@@ -60,6 +60,7 @@ html {
   padding: 0.5em;
   text-decoration: none;
   margin: 0.8vh 1vh;
+  font-size: 1em;
 }
 
 .button:focus,

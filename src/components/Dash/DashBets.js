@@ -13,9 +13,9 @@ const DashBets = props => {
 
     return (
       <div className="dashBets">
-        <a href="/bets" className="button" role="button">
+        <button className="button" onClick={() => props.history.push("/bets")}>
           See all bets
-        </a>
+        </button>
         {/* Only based the 9 bets to the componet, for display purpose */}
         <MyBets limitBets={limitBets} />
       </div>
