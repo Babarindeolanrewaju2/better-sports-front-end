@@ -3,8 +3,6 @@ import React, { Fragment } from "react";
 import FutureGames from "../Games/FutureGames";
 
 const DashGames = props => {
-  //only show the next three upcoming games on the dashboard
-
   // need today's date to compare to for future games
   const today = new Date();
 
@@ -15,6 +13,7 @@ const DashGames = props => {
     });
   };
 
+  //only show the next three upcoming games on the dashboard
   const limitGames = getFutureGames().slice(0, 3);
 
   return (
