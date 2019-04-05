@@ -56,7 +56,9 @@ class MyBets extends Component {
                       <th>Outcome</th>
                     </tr>
                   </thead>
-                  <tbody>{this.mapBetInfoToBetCard()}</tbody>
+                  {/*Dispaly all bet rows in reverse order so that we
+                    see all the most recent bets first */}
+                  <tbody>{this.mapBetInfoToBetCard().reverse()}</tbody>
                 </table>
               </Fragment>
             )}
