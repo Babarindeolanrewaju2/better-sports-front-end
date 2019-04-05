@@ -26,9 +26,15 @@ const Match = props => {
         <td>{gameDetails.two}</td>
         <td>{gameDetails.oneDraw}</td>
         <td>{gameDetails.twoDraw}</td>
-        <td>
-          <BetButton game={props.game} {...props} />
-        </td>
+        {gameDetails.one !== "TBD" &&
+        gameDetails.draw !== "TBD" &&
+        gameDetails.oneDraw !== "TBD" ? (
+          <td>
+            <BetButton game={props.game} {...props} />{" "}
+          </td>
+        ) : (
+          <td>Odds not yet listed</td>
+        )}
       </tr>
     );
   } else {
