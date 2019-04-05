@@ -63,7 +63,6 @@ class BetsForm extends Component {
     // a bet -- otherwise alert error message
     if (amount && odds && betType) {
       // checks to see that the wager amount is less than or equal to your account balance
-
       if (
         parseInt(amount) <=
         parseInt(this.props.user.attributes.accounts[0].balance)
@@ -83,7 +82,6 @@ class BetsForm extends Component {
 
   render() {
     // when bet info is available, display a betting form
-    console.log(this.props.user.attributes.accounts[0].balance);
     if (this.props.betInfo !== {}) {
       return (
         <div className="betsFormContainer">
