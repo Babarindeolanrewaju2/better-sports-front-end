@@ -9,6 +9,10 @@
   padding: 1.5vh 0;
 }
 
+.betsList table {
+  margin-bottom: 5vh;
+}
+
 .greenBet {
   background-color: #98fb98;
   /* opacity: 0.75; */
