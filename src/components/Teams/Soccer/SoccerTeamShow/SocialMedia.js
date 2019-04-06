@@ -20,7 +20,7 @@ const SocialMedia = props => {
                   : "//www." + team.website
               }
             >
-              <i class="fas fa-globe-americas" />
+              <i className="fas fa-globe-americas" />
             </a>
           </li>
         )}
@@ -38,7 +38,7 @@ const SocialMedia = props => {
                   : "//www." + team.facebook
               }
             >
-              <i class="fab fa-facebook" />
+              <i className="fab fa-facebook" />
             </a>
           </li>
         )}
@@ -56,7 +56,7 @@ const SocialMedia = props => {
                   : "//www." + team.instagram
               }
             >
-              <i class="fab fa-instagram" />
+              <i className="fab fa-instagram" />
             </a>
           </li>
         )}
@@ -74,7 +74,7 @@ const SocialMedia = props => {
                   : "//www." + team.twitter
               }
             >
-              <i class="fab fa-twitter-square" />
+              <i className="fab fa-twitter-square" />
             </a>
           </li>
         )}
