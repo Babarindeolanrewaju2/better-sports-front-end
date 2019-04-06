@@ -18,7 +18,7 @@ In this repository you will find the front end built with React.js. The front en
 
 [![alt text][image]][reference link]
 
-[image]: https://i.ytimg.com/vi/bAUPrccsoaE/2.jpg "Better Sports Demo Video"
+[image]: https://github.com/tfquirk/better-sports-front-end/blob/master/public/readmeImages/BetterSportsDemoPreview.png "Better Sports Demo Video"
 [reference link]: https://youtu.be/bAUPrccsoaE
 
 Please click on the image above if you would like to see a video demo of the Better Sports.
