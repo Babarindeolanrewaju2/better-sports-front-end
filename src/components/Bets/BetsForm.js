@@ -28,6 +28,16 @@ class BetsForm extends Component {
   setAmount = event => {
     if (event.target.value <= 10000) {
       this.setState({ ...this.state, amount: event.target.value });
+      document.getElementById("wagerInput").value = "";
+    } else {
+      this.setState({ ...this.state, amount: 10000 });
+      event.target.value = 10000;
+    }
+  };
+
+  setAmountForInputField = event => {
+    if (event.target.value <= 10000) {
+      this.setState({ ...this.state, amount: event.target.value });
     } else {
       this.setState({ ...this.state, amount: 10000 });
       event.target.value = 10000;
@@ -120,9 +130,10 @@ class BetsForm extends Component {
                     $500
                   </button>
                   <input
+                    id="wagerInput"
                     type="text"
                     placeholder="Enter Amount $"
-                    onChange={this.setAmount}
+                    onChange={this.setAmountForInputField}
                   />
                 </div>
               </div>

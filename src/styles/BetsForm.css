@@ -69,6 +69,7 @@
 
 .betWagerBtn input[type="text"]:focus {
   background-color: #ddd;
+  color: #0e0b16;
   font-size: 1em;
   outline: none;
 }
