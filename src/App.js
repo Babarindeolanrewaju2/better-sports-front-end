@@ -42,7 +42,7 @@ class App extends Component {
   }
 
   render() {
-    if (this.props.token === localStorage["token"]) {
+    if (localStorage["token"]) {
       return (
         <Fragment>
           <Route exact path="/" component={Home} />
