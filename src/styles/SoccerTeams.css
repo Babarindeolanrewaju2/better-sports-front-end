@@ -23,7 +23,7 @@
   display: inline-flex;
   flex-wrap: wrap;
   width: 90%;
-  margin: auto;
+  margin: 0 auto 5vh auto;
 }
 
 .soccerTeamCard {
