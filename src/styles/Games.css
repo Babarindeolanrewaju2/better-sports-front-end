@@ -13,12 +13,12 @@
 
 .futureGamesList {
   width: 95%;
-  margin: auto;
+  margin: 3vh auto;
 }
 
 .pastGamesList {
   width: 95%;
-  margin: auto;
+  margin: 0 auto 5vh auto;
 }
 
 table {
@@ -30,7 +30,7 @@ table {
 
 th {
   height: 50px;
-  background-color: #ccc;
+  background-color: darkgrey;
   color: black;
   font-size: 25px;
 }
