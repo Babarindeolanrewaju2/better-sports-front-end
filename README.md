@@ -63,5 +63,5 @@ This project uses the following technologies:
 4. NPM
 5. Custom CSS
 6. React-Router
-7. Team and player data was gather from the - https://www.thesportsdb.com/api.php
+7. Team and player data was gathered from the - https://www.thesportsdb.com/api.php
 8. Odds data for game was an average of 11 different bookmakers prior to the games being played
